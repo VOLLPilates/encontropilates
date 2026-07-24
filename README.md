@@ -1,4 +1,4 @@
-# encontropilates
+# Encontro Brasileiro de Pilates
 
 ## Assets para revisar
 
