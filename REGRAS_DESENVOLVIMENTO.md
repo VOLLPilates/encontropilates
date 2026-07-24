@@ -8,7 +8,10 @@
 ## Alguns Padrões Exigidos:
 Abaixo, vou descrever alguns padrões exibidos na criação dos elementos, que devem ser seguidos caso eu não indique nada ou peça especificamente o valor.
 
-Primeiramente, crie um reset padrão de CSS.
+1. Primeiramente, crie um reset padrão de CSS para a página.
+
+Geral:
+- Não defina um min-height se não for pedido.
 
 Páginas:
 - Esse site será composto por mais de uma página. Ao criar uma página nova, o arquivo index.html precisará estar dentro de um diretório com o nome da página. 
