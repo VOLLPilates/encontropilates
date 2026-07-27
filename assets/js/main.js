@@ -106,6 +106,278 @@
 })();
 
 (() => {
+  const modal = document.querySelector("#modal-inscricao");
+
+  if (!modal) {
+    return;
+  }
+
+  const closeButton = modal.querySelector(".form-modal__close");
+  const firstField = modal.querySelector(".form-modal__input");
+  // Apenas o CTA da section de ingressos abre o formulário.
+  const openers = document.querySelectorAll(".ingressos-section__cta");
+  let lastFocused = null;
+
+  const closeModal = () => {
+    modal.hidden = true;
+    document.body.style.removeProperty("overflow");
+
+    if (lastFocused instanceof HTMLElement) {
+      lastFocused.focus();
+    }
+  };
+
+  const openModal = () => {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    firstField.focus();
+  };
+
+  openers.forEach((opener) => {
+    opener.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  });
+
+  closeButton.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+})();
+
+(() => {
+  const modal = document.querySelector("#modal-palestrante");
+  const cards = [...document.querySelectorAll(".speaker-card")];
+
+  if (!modal || cards.length === 0) {
+    return;
+  }
+
+  // Biografias do site original, indexadas pelo nome do palestrante.
+  const bios = {
+    "Lolita San Miguel": [
+      "Lolita San Miguel, nascida em Nova York, filha de pais porto-riquenhos, é uma professora de Pilates de primeira geração e pratica o método há 59 anos. Ela iniciou seus estudos de movimento corporal aos sete anos de idade como aluna de balé e teve uma carreira distinta na dança a partir dos 15 anos, integrando companhias como a Slavenska Franklin Ballet, Joffrey Ballet, e foi solista do Metropolitan Opera Ballet por dez anos.",
+      "Apaixonou-se pelo Método Pilates, tornou-se aprendiz de Carola Trier e, posteriormente, de Joseph e Clara Pilates, sendo certificada por Joseph Pilates em 1967. Acreditando na educação contínua, também obteve um certificado da Polestar Pilates em 2003.",
+      "Lolita mudou-se com o marido para Porto Rico em 1977. Lá, fundou o Ballet Concierto de Puerto Rico, onde atuou como Diretora Artística por 26 anos, e também fundou a Pilates y Más, Inc., em 2000. Retornou ao continente em 2005, iniciou seu bem-sucedido Programa de Mentoria para Mestres em Pilates, com 160 horas de duração, e produziu onze DVDs que se tornaram best-sellers. Em 2013, lançou seu programa de formação de professores Lolita's Legacy, com 500 horas de duração, que é ministrado ao redor do mundo: na Austrália, América do Sul, América Central, Porto Rico, Japão, Escócia, Ucrânia, Europa e, naturalmente, nos Estados Unidos.",
+      "A Sra. San Miguel se orgulha especialmente de suas iniciativas para homenagear Joseph Pilates, tanto em seu local de nascimento quanto em seu local de descanso no Cemitério Ferncliff, em Nova York. Essas iniciativas resultaram na instalação de uma placa memorial no local onde ele nasceu, em Mönchengladbach, e na realização de conferências internacionais bienais de Pilates, como a que você está participando agora e, desde 2016, também em Nova York."
+    ],
+    "Kathy Corey": [
+      "Kathy Corey é considerada a Mestre dos Mestres pois além de ter mais de 40 anos de experiência no universo do Pilates, ela foi a única até hoje a ser treinada por 4 Elders – discípulos diretos de Joseph. Ela é uma Master Teacher que iniciou sua carreira em 1979 e é Diretora da Kathy Corey Pilates."
+    ],
+    "Ricardo Jaramillo": [
+      "Licenciado em Educação Física e em Osteopatia Estrutural. Ricardo é treinador da Federação Internacional de Fisiculturismo & Fitness (IFBB) e instrutor de Pilates certificado pela Pilates Method Alliance (PMA®). É autor do livro “Pilates en la práctica” (Pilates na prática)."
+    ],
+    "Jason Williams": [
+      "Jason está na indústria de saúde e bem-estar desde 2002. Como ex-atleta universitário de atletismo, seu foco é integrar técnicas mente-corpo usando fitness, pilates, barre, reiki e meditação. Ele criou programas para formação de professores de pilates barre, escreveu artigos para mindbodygreen, Pilates Style Magazine, Prevention Health e outros. Além disso, é instrutor do Pilates Anytime e educador da Balanced Body. Jason escreveu quatro livros infantis de saúde e bem-estar, chamados “As Aventuras de Frankie Fitness”. Atualmente, ele dá aulas e treina em Baltimore, Maryland, e realiza cursos em Miami, Califórnia, Charleston, Chicago e outras cidades. Em 2023, foi eleito Best of Baltimore Fitness Influencer (Melhor Influenciador de Fitness de Baltimore)."
+    ],
+    "Lisa Hubbard": [
+      "Educadora internacional de Pilates, palestrante e certificada como Health Coach (Treinadora de Saúde) com mais de 25 anos de experiência. Fundadora do Rhythm Pilates, possui credenciais em Yoga e GYROTONIC®, sendo conhecida mundialmente por sua abordagem criativa e técnica refinada no Método Pilates."
+    ],
+    "Carrie Pages": [
+      "Com mais de 20 anos de experiência no ensino, Carrie Pages é fundadora do primeiro estúdio de Pilates de Wilmington, o In Balance Pilates Studio, e criadora do CarriePagesPilates.com, uma plataforma online com mais de 400 aulas para instrutores e alunos dedicados ao redor do mundo. Vencedora da 2016 Pilates Anytime Next Instructor Competition (Competição de Próximo Instrutor do Pilates Anytime 2016), ela combina as raízes do Pilates clássico com aplicações criativas e do mundo real, inspirando instrutores a reacender sua paixão pelo ensino."
+    ],
+    "Glaucia Adriana": [
+      "Fisioterapeuta e oradora internacional, com 24 anos de experiência. É da segunda geração do Método Pilates e educadora de Lolita San Miguel. Participou de cursos com várias lendas do Método."
+    ],
+    "Thalyssa Larangeiras": [
+      "Uma das profissionais mais admiradas e seguidas do Brasil pelo seu talento, carisma e técnica apurada. Fisioterapeuta, especialista em Movimento Funcional e instrutora de Pilates desde 2011. Possui formação no Método Pilates, MAT Pilates Avançado com acessórios, aeropilates, alongamento consciente, Ballness, Slide Board e Barre Pilates. Proprietária da clínica LIFE – Pilates, Estética e RPG."
+    ],
+    "Keyner Luiz": [
+      "Um dos maiores profissionais do movimento no Brasil. Foi sócio do Grupo VOLL por 10 anos e é criador do MIT (Movimento Inteligente). Instrutor de Pilates e Treinamento Funcional. Fisioterapeuta formado pela UNISANTA, com pós-graduação em Fisiologia do Exercício pela CEFE. Também possui formação em MAT Pilates, Pilates Studio, Pilates Fisioterapêutico e Pilates Clássico. Ministra palestras e workshops nos maiores eventos da América Latina. Considerado um dos maiores influenciadores do país na área, tem milhares de mentorados no Brasil e no exterior."
+    ],
+    "Rodrigo Nanô": [
+      "Formado pela Escola Pilates Wellness & Energy, em Madrid – Espanha. Possui título de certificação da Pilates Method Alliance. Participou de cursos, conferências e workshops na Europa, Ásia e América, trazendo profissionais renomados para o Brasil. Hoje ministra cursos em Portugal, Itália e Espanha. É formado pela escola americana referência no Autêntico Método Pilates – Metropolitan Pilates, com a renomada professora Dorothee Vandewalle, Seattle/EUA."
+    ],
+    "Mariana Dias": [
+      "Um dos grandes talentos brasileiros atuais. Criadora da Metodologia Pilates Construtivo, sócia-proprietária do Instituto VOLL e vencedora do Prêmio Contrology 2023. Fisioterapeuta pela Universidade Estadual de Londrina (UEL), pós-graduada em Fisioterapia Aplicada em Traumato-Ortopedia e Esportiva. Viaja pelo Brasil e o exterior ensinando sua metodologia e é parte integrante do Pilates Trip, uma comunidade que roda o mundo mostrando diferentes vertentes do Pilates."
+    ],
+    "Marcella Contursi": [
+      "Bailarina clássica, fisioterapeuta e pós-graduada em Pilates e prescrição do exercício físico. Atua no Método Pilates desde 2011 e ministra cursos desde 2014. Proprietária do Studio Pilates Marcella Contursi, em Santos/SP. Viaja o Brasil ensinando sua metodologia e é reconhecida por formar uma comunidade engajada, com foco em qualidade do exercício, sequências criativas e planejamento inteligente de aulas."
+    ],
+    "Morgana Peroni": [
+      "Fisioterapeuta formada pela Universidade de Caxias do Sul (RS), com mais de 15 anos de experiência na área do Pilates. Estudou com grandes nomes do Pilates nacional e internacional. Em 2020 concluiu sua certificação internacional com Erica Almodovar, do Authentic Pilates Learning Center – EUA, que foi aluna direta de Romana Kryzanowska, sendo considerada 3ª geração direta de Joseph Pilates. Atualmente, ministra cursos e workshops por todo o Brasil e Europa."
+    ],
+    "Adriana Coldebella": [
+      "Professora de Pilates Clássico, bailarina e profissional de Educação Física. Adriana também é autora do livro “MAT Pilates – da prática à cinesiologia aplicada” e vencedora do Prêmio Contrology Awards nas categorias Revelação em 2016 e Profissional do Ano em 2020."
+    ],
+    "Maria Lina": [
+      "Fisioterapeuta, com formação em Pilates Clássico, Moderno, Pilates Suspensed Treinner e Reabilitação. Criadora e mentora em diversas formações, ministra palestras e cursos relacionados à saúde, disfunções posturais e tratamento da dor."
+    ],
+    "Diego Castro": []
+  };
+
+  // Palestrantes cuja bio é uma lista de itens em vez de parágrafos.
+  const bioLists = {
+    "Diego Castro": [
+      "Fisioterapeuta com 20 anos de atuação no Método Pilates no RJ;",
+      "Certificação Internacional em Pilates Contemporâneo pela STOTT PILATES;",
+      "Certificação em PILATES CLÁSSICO por Fernando Albernaz;",
+      "Mentor e Treinador de Instrutores;",
+      "Campeão Casa Voll+ 2025",
+      "Palestrante no Contrologia Brasil 2026",
+      "Palestrante na Pré-Conferência online Your Health 2026"
+    ]
+  };
+
+  // Palestrantes cujo texto rola dentro do card (bio muito longa).
+  const scrollableBios = new Set(["Lolita San Miguel"]);
+
+  const speakers = cards.map((card) => {
+    const img = card.querySelector(".speaker-card__photo");
+    const name = card.querySelector(".speaker-card__name").textContent.trim();
+
+    return {
+      name,
+      src: img.getAttribute("src"),
+      alt: img.getAttribute("alt"),
+      bio: bios[name] || [],
+      list: bioLists[name] || null,
+      scrollable: scrollableBios.has(name)
+    };
+  });
+
+  const box = modal.querySelector(".speaker-modal__box");
+  const content = modal.querySelector(".speaker-modal__content");
+  const photo = modal.querySelector(".speaker-modal__photo");
+  const nameEl = modal.querySelector(".speaker-modal__name");
+  const bioEl = modal.querySelector(".speaker-modal__bio");
+  const closeButton = modal.querySelector(".speaker-modal__close");
+  const prev = modal.querySelector(".speaker-modal__nav--prev");
+  const next = modal.querySelector(".speaker-modal__nav--next");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let current = 0;
+  let animating = false;
+  let lastFocused = null;
+
+  const paint = (index) => {
+    const speaker = speakers[index];
+
+    photo.src = speaker.src;
+    photo.alt = speaker.name;
+    nameEl.textContent = speaker.name;
+
+    if (speaker.list) {
+      bioEl.innerHTML = `<ul class="speaker-modal__list">${speaker.list.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+    } else {
+      bioEl.innerHTML = speaker.bio.map((p) => `<p>${p}</p>`).join("");
+    }
+
+    bioEl.classList.toggle("is-scrollable", speaker.scrollable);
+    bioEl.scrollTop = 0;
+    box.scrollTop = 0;
+  };
+
+  const SLIDE_MS = 300;
+
+  const goTo = (index) => {
+    const target = (index + speakers.length) % speakers.length;
+
+    if (target === current) {
+      return;
+    }
+
+    if (reduceMotion) {
+      current = target;
+      paint(current);
+      return;
+    }
+
+    if (animating) {
+      return;
+    }
+
+    animating = true;
+    // Sai descendo e some.
+    content.classList.add("is-leaving");
+
+    window.setTimeout(() => {
+      current = target;
+      paint(current);
+      // Reposiciona embaixo e invisível, sem animar, para então subir.
+      content.classList.add("is-entering");
+      content.classList.remove("is-leaving");
+      void content.offsetHeight;
+      content.classList.remove("is-entering");
+
+      window.setTimeout(() => {
+        animating = false;
+      }, SLIDE_MS);
+    }, SLIDE_MS);
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    document.body.style.removeProperty("overflow");
+
+    if (lastFocused instanceof HTMLElement) {
+      lastFocused.focus();
+    }
+  };
+
+  const openModal = (index) => {
+    lastFocused = document.activeElement;
+    current = index;
+    paint(current);
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
+  };
+
+  cards.forEach((card, index) => {
+    const speaker = speakers[index];
+
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `Ver biografia de ${speaker.name}`);
+
+    card.addEventListener("click", () => openModal(index));
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal(index);
+      }
+    });
+  });
+
+  prev.addEventListener("click", () => goTo(current - 1));
+  next.addEventListener("click", () => goTo(current + 1));
+  closeButton.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (modal.hidden) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeModal();
+    } else if (event.key === "ArrowLeft") {
+      goTo(current - 1);
+    } else if (event.key === "ArrowRight") {
+      goTo(current + 1);
+    }
+  });
+})();
+
+(() => {
   const popup = document.querySelector("#popup-lancamento");
 
   if (!popup) {
