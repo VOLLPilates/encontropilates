@@ -209,7 +209,7 @@
       "Fisioterapeuta formada pela Universidade de Caxias do Sul (RS), com mais de 15 anos de experiência na área do Pilates. Estudou com grandes nomes do Pilates nacional e internacional. Em 2020 concluiu sua certificação internacional com Erica Almodovar, do Authentic Pilates Learning Center – EUA, que foi aluna direta de Romana Kryzanowska, sendo considerada 3ª geração direta de Joseph Pilates. Atualmente, ministra cursos e workshops por todo o Brasil e Europa."
     ],
     "Adriana Coldebella": [
-      "Professora de Pilates Clássico, bailarina e profissional de Educação Física. Adriana também é autora do livro “MAT Pilates – da prática à cinesiologia aplicada” e vencedora do Prêmio Contrology Awards nas categorias Revelação em 2016 e Profissional do Ano em 2020."
+      " Adriana Coldebella é artista da dança, educadora física, autora e especialista em Pilates Clássico. É fundadora da Fênix Academy, plataforma de educação continuada para professores de Pilates, idealizadora da Formação Completa em Pilates Clássico e do MAT Camp, uma imersão que une o método, natureza e movimento. Dedica sua carreira à preservação da essência do método de Joseph Pilates por meio do ensino, da prática e da formação de novos profissionais."
     ],
     "Maria Lina": [
       "Fisioterapeuta, com formação em Pilates Clássico, Moderno, Pilates Suspensed Treinner e Reabilitação. Criadora e mentora em diversas formações, ministra palestras e cursos relacionados à saúde, disfunções posturais e tratamento da dor."
