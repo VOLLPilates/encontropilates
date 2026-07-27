@@ -490,10 +490,31 @@ section[id] {
   box-shadow: 0 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
 
+.card__media {
+  position: relative;
+  margin: 0;
+}
+
 .card__image {
+  display: block;
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+.card__badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 7px 15px;
+  border-radius: 50px;
+  color: #666666;
+  background: var(--color-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .card__title {
@@ -1010,6 +1031,14 @@ section[id] {
   width: 100%;
   margin-top: 22px;
   font-size: 16px;
+}
+
+.form-modal__note {
+  margin-top: 14px;
+  color: #8a8698;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .speaker-modal {

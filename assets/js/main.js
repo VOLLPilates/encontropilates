@@ -114,9 +114,18 @@
 
   const closeButton = modal.querySelector(".form-modal__close");
   const firstField = modal.querySelector(".form-modal__input");
+  const form = modal.querySelector(".form-modal__form");
   // Apenas o CTA da section de ingressos abre o formulário.
   const openers = document.querySelectorAll(".ingressos-section__cta");
   let lastFocused = null;
+
+  // Enquanto o formulário for placeholder, não envia nada.
+  // Quando o RD Station for configurado no HTML, remover este bloco.
+  if (form && form.dataset.placeholder === "true") {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+    });
+  }
 
   const closeModal = () => {
     modal.hidden = true;
