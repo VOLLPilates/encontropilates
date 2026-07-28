@@ -131,6 +131,86 @@
         background: #000000;
       }
 
+      .activities {
+        padding-block: 72px;
+        background: #ffffff;
+        color: #1f193d;
+      }
+
+      .activities__header {
+        margin-bottom: 38px;
+        text-align: center;
+      }
+
+      .activities__title {
+        margin: 0 0 10px;
+        color: #1f193d;
+        font-family: "Montserrat", sans-serif;
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 800;
+      }
+
+      .activities__subtitle {
+        color: #1f193d;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .activities__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .activity-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #000000;
+        border-radius: 14px;
+        background: #ffffff;
+      }
+
+      .activity-card__image {
+        display: block;
+        width: 100%;
+        height: 190px;
+        padding: 24px;
+        box-sizing: border-box;
+        object-fit: contain;
+      }
+
+      .activity-card__text {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        min-height: 120px;
+        margin: 0;
+        padding: 24px;
+        color: #1f193d;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        line-height: 1.45;
+        text-align: center;
+      }
+
+      .activity-card__text > * {
+        margin: 0;
+      }
+
+      @media (max-width: 767px) {
+        .activities {
+          padding-block: 52px;
+        }
+
+        .activities__grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (min-width: 768px) {
         .entenda-hero {
           padding-block: 88px 74px;
@@ -223,6 +303,111 @@
               allowfullscreen
             ></iframe>
           </div>
+        </div>
+      </section>
+
+      <section class="activities" aria-labelledby="activities-title">
+        <div class="row">
+          <div class="activities__header">
+            <h2 id="activities-title" class="activities__title">Muito Mais que um Congresso</h2>
+            <div class="activities__subtitle">Sempre tem alguma atividade acontecendo!</div>
+          </div>
+
+          <div class="activities__grid">
+            <article class="activity-card">
+              <img
+                class="activity-card__image"
+                src="./assets/images/entenda_encontro_icon01.png"
+                alt="Ícone de workshop prático de Pilates"
+                width="220"
+                height="190"
+                loading="lazy"
+              >
+              <div class="activity-card__text">
+                <div>Mais de <strong>40 workshops<br> práticos</strong> em 10 salas simultâneas.</div>
+              </div>
+            </article>
+
+            <article class="activity-card">
+              <img
+                class="activity-card__image"
+                src="./assets/images/entenda_encontro_icon02.png"
+                alt="Ícone de mesa redonda e painel de discussão"
+                width="220"
+                height="190"
+                loading="lazy"
+              >
+              <div class="activity-card__text">
+                <p><strong>Mesas redondas e painéis de discussão,</strong> com debates inéditos.</p>
+              </div>
+            </article>
+
+            <article class="activity-card">
+              <img
+                class="activity-card__image"
+                src="./assets/images/entenda_encontro_icon03.png"
+                alt="Ícone de palestra sobre o método Pilates"
+                width="220"
+                height="190"
+                loading="lazy"
+              >
+              <div class="activity-card__text">
+                <div><strong>Palestras com grandes ícones do Pilates mundial</strong> para mergulhar no método.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="experiencias-section" aria-labelledby="experiencias-title">
+        <div class="experiencias-section__row row">
+          <div class="experiencias-section__header reveal-on-scroll">
+            <h2 id="experiencias-title" class="experiencias-section__title">
+              Experiências Paralelas Durante Todo o Evento
+            </h2>
+            <p class="experiencias-section__subtitle">
+              Você não precisa ficar somente dentro da sala. Tem muita coisa<br> acontecendo do lado de fora e você vai se surpreender:
+            </p>
+          </div>
+
+          <ul class="experiencias-lista">
+            <li class="experiencia-item">
+              <div class="experiencia-item__icon-wrap reveal-on-scroll" style="--reveal-delay: 60ms;">
+                <img class="experiencia-item__icon" src="./assets/images/experiencias_icon03.png" alt="" width="120" height="120" loading="lazy">
+              </div>
+              <div class="experiencia-item__conteudo">
+                <h3 class="experiencia-item__titulo">MAT CLASS ZONE</h3>
+                <p class="experiencia-item__texto">+10 hora de aulas MAT Pilates acontecendo para os congressistas.</p>
+              </div>
+            </li>
+            <li class="experiencia-item">
+              <div class="experiencia-item__icon-wrap reveal-on-scroll" style="--reveal-delay: 140ms;">
+                <img class="experiencia-item__icon" src="./assets/images/experiencias_icon02.png" alt="" width="120" height="120" loading="lazy">
+              </div>
+              <div class="experiencia-item__conteudo">
+                <h3 class="experiencia-item__titulo">PALESTRAS ABERTAS</h3>
+                <p class="experiencia-item__texto">Uma sala inteira dedicada para +40 palestras abertas – entrada livre.</p>
+              </div>
+            </li>
+            <li class="experiencia-item">
+              <div class="experiencia-item__icon-wrap reveal-on-scroll" style="--reveal-delay: 220ms;">
+                <img class="experiencia-item__icon" src="./assets/images/experiencias_icon04.png" alt="" width="120" height="120" loading="lazy">
+              </div>
+              <div class="experiencia-item__conteudo">
+                <h3 class="experiencia-item__titulo">FEIRA DE EXPOSIÇÃO</h3>
+                <p class="experiencia-item__texto">Conheça os maiores fornecedores e lançamentos.</p>
+              </div>
+            </li>
+            <li class="experiencia-item">
+              <div class="experiencia-item__icon-wrap reveal-on-scroll" style="--reveal-delay: 300ms;">
+                <img class="experiencia-item__icon" src="./assets/images/experiencias_icon05.png" alt="" width="120" height="120" loading="lazy">
+              </div>
+              <div class="experiencia-item__conteudo">
+                <h3 class="experiencia-item__titulo">LOUNGES TEMÁTICOS</h3>
+                <p class="experiencia-item__texto">Espaços de convivência, aprendizado e interação.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

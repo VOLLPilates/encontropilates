@@ -1524,6 +1524,140 @@ section[id] {
 }
 
 /* Página de programação (/programacao/). */
+/* Efeito de aparecer ao rolar (reutilizável).
+   Elementos com .reveal-on-scroll começam invisíveis, deslocados para baixo;
+   quando o JS adiciona .is-visible eles sobem e ganham opacidade. */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Seção Experiências Paralelas (/entenda-o-encontro/). */
+.experiencias-section {
+  padding-block: var(--section-padding);
+  background: var(--color-purple);
+}
+
+.experiencias-section__row {
+  text-align: center;
+}
+
+.experiencias-section__header {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.experiencias-section__title {
+  color: var(--color-white);
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.experiencias-section__subtitle {
+  margin-top: 12px;
+  color: var(--color-white);
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Lista vertical centralizada: ícone circular + texto ao lado, o conjunto no meio. */
+.experiencias-lista {
+  list-style: none;
+  padding: 0;
+  margin: 36px auto 0;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.experiencia-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.experiencia-item__icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #6a4fa8;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.experiencia-item__icon {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.experiencia-item__conteudo {
+  flex: 0 1 300px;
+  min-width: 0;
+}
+
+.experiencia-item__titulo {
+  color: #72ABBA;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.experiencia-item__texto {
+  margin-top: 6px;
+  color: var(--color-white);
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .experiencias-section__title {
+    font-size: 30px;
+  }
+
+  .experiencia-item__icon-wrap {
+    width: 72px;
+    height: 72px;
+  }
+
+  .experiencia-item__titulo {
+    font-size: 18px;
+  }
+}
+
 .programacao-section {
   padding-block: var(--section-padding);
   background: #ffffff;
@@ -1566,43 +1700,75 @@ section[id] {
 
 .prog-grupo {
   margin-top: 24px;
-  padding: 12px 16px;
+  margin-bottom: 0;
+  padding: 13px 16px;
   color: #ffffff;
-  background: #0AA89D;
+  background: #12A8A2;
   font-family: "Montserrat", var(--font-primary);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.3;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   text-align: center;
-  border-radius: 4px;
 }
 
 .prog-lista {
   list-style: none;
   padding: 0;
-  margin: 12px 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
+  overflow-x: auto;
 }
 
-.prog-bloco {
-  border: 1px solid #e5e5eb;
-  border-radius: 6px;
-  overflow: hidden;
+.prog-cabecalho {
+  display: grid;
+  grid-template-columns: 195px repeat(3, minmax(0, 1fr));
+  min-width: 760px;
+  margin: 0;
   background: #ffffff;
 }
 
-.prog-bloco__hora {
-  padding: 10px 16px;
-  background: #054D4A;
+.prog-cabecalho__vazio {
+  background: #ffffff;
+}
+
+.prog-cabecalho__celula {
+  padding: 14px 12px;
+  border-left: 3px solid #ffffff;
+  background: #075654;
   color: #ffffff;
   font-family: "Montserrat", var(--font-primary);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.prog-bloco {
+  display: grid;
+  grid-template-columns: 195px minmax(0, 1fr);
+  min-width: 760px;
+  border: 0;
+  border-bottom: 3px solid #ffffff;
+  background: #dedede;
+}
+
+.prog-bloco__hora {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 14px 16px;
+  background: #075654;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 800;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .prog-aula__link {
@@ -1621,18 +1787,83 @@ section[id] {
 }
 
 .prog-bloco__aulas {
-  padding: 12px 16px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: stretch;
+  padding: 0;
+  gap: 0;
+  background: #dedede;
 }
 
 .prog-aula {
+  display: block;
+  flex: 1 0 0;
+  align-content: center;
+  min-width: 0;
+  min-height: 50px;
+  padding: 14px 22px;
+  border-left: 3px solid #ffffff;
   color: #1F193D;
   font-family: "Montserrat", var(--font-primary);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.prog-aula--vazia {
+  color: transparent;
+}
+
+.prog-lista--nome-tema .prog-aula:first-child:nth-last-child(2) {
+  flex: 0 0 33%;
+}
+
+.prog-lista--nome-tema .prog-aula:nth-child(2):last-child {
+  flex: 0 0 67%;
+}
+
+.prog-lista--workshops {
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: #8f8f8f #e5e5e5;
+  scrollbar-width: auto;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.prog-lista--workshops.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.prog-lista--workshops .prog-bloco {
+  grid-template-columns: 195px max-content;
+  width: max-content;
+  min-width: 100%;
+}
+
+.prog-lista--workshops .prog-bloco__aulas {
+  width: max-content;
+}
+
+.prog-lista--workshops .prog-bloco__hora {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  box-shadow: 3px 0 0 #ffffff;
+}
+
+.prog-lista--workshops .prog-aula {
+  flex: 0 0 190px;
+  width: 190px;
+  min-height: 190px;
+  padding: 18px 14px;
+}
+
+.prog-lista--workshops .prog-bloco--intervalo .prog-aula {
+  flex-basis: 1900px;
+  width: 1900px;
+  min-height: 50px;
 }
 
 .prog-aula strong {
@@ -1647,15 +1878,15 @@ section[id] {
 
 /* Bloco especial: intervalo fica esmaecido; abertura fica em amarelo; VIP em roxo. */
 .prog-bloco--intervalo .prog-bloco__hora {
-  background: #6c6c86;
+  background: #075654;
 }
 
 .prog-bloco--intervalo .prog-aula {
-  color: #6c6c86;
-  font-style: italic;
+  color: #000000;
+  font-style: normal;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .prog-bloco--destaque .prog-bloco__hora {
@@ -1696,25 +1927,26 @@ section[id] {
     padding: 14px 20px;
   }
 
-  .prog-bloco {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-  }
-
   .prog-bloco__hora {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     font-size: 16px;
-  }
-
-  .prog-bloco__aulas {
-    padding: 14px 20px;
   }
 
   .prog-aula {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .prog-dia {
+    overflow: hidden;
+  }
+
+  .prog-lista {
+    padding-bottom: 8px;
+  }
+
+  .prog-cabecalho {
+    overflow-x: auto;
   }
 }
 

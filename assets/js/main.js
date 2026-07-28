@@ -549,3 +549,88 @@
     render(0);
   });
 })();
+
+(() => {
+  document.querySelectorAll(".prog-lista--workshops").forEach((table) => {
+    let startX = 0;
+    let startScrollLeft = 0;
+    let activePointerId = null;
+
+    table.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse" || event.button !== 0) {
+        return;
+      }
+
+      activePointerId = event.pointerId;
+      startX = event.clientX;
+      startScrollLeft = table.scrollLeft;
+      table.classList.add("is-dragging");
+      table.setPointerCapture(event.pointerId);
+    });
+
+    table.addEventListener("pointermove", (event) => {
+      if (event.pointerId !== activePointerId) {
+        return;
+      }
+
+      event.preventDefault();
+      table.scrollLeft = startScrollLeft - (event.clientX - startX);
+    });
+
+    const stopDragging = (event) => {
+      if (event.pointerId !== activePointerId) {
+        return;
+      }
+
+      activePointerId = null;
+      table.classList.remove("is-dragging");
+
+      if (table.hasPointerCapture(event.pointerId)) {
+        table.releasePointerCapture(event.pointerId);
+      }
+    };
+
+    table.addEventListener("pointerup", stopDragging);
+    table.addEventListener("pointercancel", stopDragging);
+  });
+})();
+
+/* Efeito "aparecer ao rolar" para elementos com .reveal-on-scroll.
+   Usa IntersectionObserver — adiciona .is-visible quando o elemento entra na tela,
+   e para de observar em seguida (o efeito acontece uma vez só). */
+(() => {
+  const alvos = document.querySelectorAll(".reveal-on-scroll");
+
+  if (alvos.length === 0) {
+    return;
+  }
+
+  // Sem IntersectionObserver ou com movimento reduzido, mostra tudo imediatamente.
+  const semAnimacao =
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (semAnimacao) {
+    alvos.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("is-visible");
+          observer.unobserve(entrada.target);
+        }
+      });
+    },
+    {
+      // Dispara quando 15% do elemento já apareceu na viewport.
+      threshold: 0.15,
+      // Margem para começar a animação um pouco antes de o elemento chegar.
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+
+  alvos.forEach((el) => observer.observe(el));
+})();
