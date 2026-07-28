@@ -1523,6 +1523,201 @@ section[id] {
   margin-top: 40px;
 }
 
+/* Página de programação (/programacao/). */
+.programacao-section {
+  padding-block: var(--section-padding);
+  background: #ffffff;
+}
+
+.programacao-section__row {
+  text-align: center;
+}
+
+.programacao-section__title {
+  color: #12A19A;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.programacao-section__disclaimer {
+  margin-top: 8px;
+  color: #666666;
+  font-size: 17px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.prog-dia {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.prog-dia__titulo {
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.prog-grupo {
+  margin-top: 24px;
+  padding: 12px 16px;
+  color: #ffffff;
+  background: #0AA89D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.prog-lista {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prog-bloco {
+  border: 1px solid #e5e5eb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.prog-bloco__hora {
+  padding: 10px 16px;
+  background: #054D4A;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.prog-aula__link {
+  display: inline-block;
+  margin-left: 4px;
+  color: #12A19A;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.prog-aula__link:hover,
+.prog-aula__link:focus-visible {
+  color: #054D4A;
+}
+
+.prog-bloco__aulas {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prog-aula {
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.prog-aula strong {
+  color: #1B123D;
+  font-weight: 700;
+}
+
+.prog-aula--full {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Bloco especial: intervalo fica esmaecido; abertura fica em amarelo; VIP em roxo. */
+.prog-bloco--intervalo .prog-bloco__hora {
+  background: #6c6c86;
+}
+
+.prog-bloco--intervalo .prog-aula {
+  color: #6c6c86;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.prog-bloco--destaque .prog-bloco__hora {
+  background: #E09900;
+}
+
+.prog-bloco--destaque .prog-aula {
+  color: #1B123D;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.prog-bloco--vip .prog-bloco__hora {
+  background: #720000;
+}
+
+.prog-bloco--vip .prog-aula {
+  color: #720000;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.programacao-section__cta {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .programacao-section__title {
+    font-size: 35px;
+  }
+
+  .prog-dia__titulo {
+    font-size: 24px;
+  }
+
+  .prog-grupo {
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+
+  .prog-bloco {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+  }
+
+  .prog-bloco__hora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .prog-bloco__aulas {
+    padding: 14px 20px;
+  }
+
+  .prog-aula {
+    font-size: 16px;
+  }
+}
+
 .section {
   padding-block: var(--section-padding);
 }
