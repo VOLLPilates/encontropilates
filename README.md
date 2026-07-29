@@ -42,6 +42,12 @@ Imagens ainda em `.png` / `.jpg` aguardando conversão para `.webp`.
 - `assets/images/logo_grupovoll.png`: logo do Grupo Voll (Hero Section).
 - `assets/images/logo-meiasap-horizontal.png`: logo de patrocinador (Meia Sapatilha).
 
+**Momentos Especiais (/entenda-o-encontro/):**
+- `entenda-o-encontro/assets/images/momentos_foto01.jpg`: card PILATES LEGEND.
+- `entenda-o-encontro/assets/images/momentos_foto02.jpg`: card IMERSÃO PILATES TRIP.
+- `entenda-o-encontro/assets/images/momentos_foto03.jpg`: card PRÊMIO CONTROLOGY.
+- `entenda-o-encontro/assets/images/momentos_foto04.jpg`: card MESA REDONDA.
+
 **Convidados VIP (/palestrantes/):**
 - `palestrantes/assets/images/background_convidados_vips.jpg`: background da section VIP.
 - `palestrantes/assets/images/palestrant_vip_ana_lacerda.png`

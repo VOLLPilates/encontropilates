@@ -1602,6 +1602,7 @@ section[id] {
   width: 100%;
 }
 
+/* A imagem já vem com fundo roxo redondo — o wrapper só serve para o efeito de reveal. */
 .experiencia-item__icon-wrap {
   flex-shrink: 0;
   display: flex;
@@ -1609,20 +1610,18 @@ section[id] {
   justify-content: center;
   width: 62px;
   height: 62px;
-  border-radius: 50%;
-  background: #6a4fa8;
-  border: 2px solid rgba(255, 255, 255, 0.35);
 }
 
 .experiencia-item__icon {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
 .experiencia-item__conteudo {
   flex: 0 1 300px;
   min-width: 0;
+  text-align: left;
 }
 
 .experiencia-item__titulo {
@@ -1655,6 +1654,405 @@ section[id] {
 
   .experiencia-item__titulo {
     font-size: 18px;
+  }
+}
+
+/* Momentos Especiais (Entenda o Encontro): grade 2x2 de cards com foto no topo. */
+.momentos-section {
+  padding-block: 60px;
+  background: #ffffff;
+}
+
+.momentos-section__header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.momentos-section__title {
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.momentos-section__subtitle {
+  margin-top: 10px;
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.momentos-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.momento-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #1A123B;
+  color: #ffffff;
+}
+
+.momento-card__foto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 336 / 197;
+  object-fit: cover;
+}
+
+.momento-card__conteudo {
+  padding: 20px 22px 26px;
+  text-align: center;
+}
+
+.momento-card__titulo {
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.momento-card__texto {
+  margin-top: 10px;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .momentos-section {
+    padding-block: 80px;
+  }
+
+  .momentos-section__title {
+    font-size: 28px;
+  }
+
+  .momentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+}
+
+/* Networking e Comunidade: texto + foto sobre background da própria página.
+   A imagem de fundo é aplicada inline no HTML, pois vive em ./assets/images/. */
+.networking-section {
+  position: relative;
+  padding: 60px 0 0;
+  background-color: #1B123D;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.networking-section__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.networking-section__conteudo {
+  max-width: 620px;
+  padding-bottom: 24px;
+}
+
+.networking-section__title {
+  color: #79BCCD;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.networking-section__texto {
+  margin-top: 18px;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.networking-section__quote {
+  margin-top: 18px;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.networking-section__foto {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.networking-section__img {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .networking-section {
+    padding: 80px 0 0;
+  }
+
+  .networking-section__row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: left;
+    gap: 40px;
+  }
+
+  .networking-section__conteudo {
+    flex: 1;
+    max-width: 520px;
+    padding-bottom: 60px;
+  }
+
+  .networking-section__foto {
+    width: auto;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  .networking-section__img {
+    width: 420px;
+  }
+
+  .networking-section__title {
+    font-size: 34px;
+  }
+}
+
+/* Workshops Práticos (Entenda o Encontro). */
+.workshops-section {
+  padding-block: 64px 72px;
+  background: #ffffff;
+}
+
+.workshops-section__row {
+  text-align: center;
+}
+
+.workshops-section__title {
+  margin: 0;
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.workshops-section__texto {
+  margin: 20px 0 0;
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.workshops-section__destaque {
+  margin: 8px 0 0;
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.workshops-section__temas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 960px;
+  margin: 26px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workshops-section__tema {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 7px;
+  background: #1F193D;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (min-width: 560px) {
+  .workshops-section__temas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .workshops-section {
+    padding-block: 70px 80px;
+  }
+
+  .workshops-section__title {
+    font-size: 34px;
+  }
+
+  .workshops-section__texto,
+  .workshops-section__destaque {
+    font-size: 19px;
+  }
+
+  .workshops-section__temas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+}
+
+/* Mestres Mundiais: faixa contínua com duas cópias da mesma imagem. */
+.mestres-section {
+  padding-block: 64px 72px;
+  background: #1F193D;
+  overflow: hidden;
+}
+
+.mestres-section__title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.mestres-carousel {
+  width: 100%;
+  margin-top: 34px;
+  overflow: hidden;
+}
+
+.mestres-carousel__track {
+  display: flex;
+  width: max-content;
+  animation: mestres-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.mestres-carousel__image {
+  display: block;
+  flex: none;
+  width: auto;
+  height: clamp(170px, 20vw, 243px);
+  max-width: none;
+}
+
+@keyframes mestres-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 900px) {
+  .mestres-section {
+    padding-block: 70px 82px;
+  }
+
+  .mestres-section__title {
+    font-size: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mestres-carousel__track {
+    animation-play-state: paused;
+  }
+}
+
+/* Chamada final (Entenda o Encontro). */
+.experiencia-cta {
+  padding-block: 50px;
+  background: #0AA19A;
+}
+
+.experiencia-cta__row {
+  text-align: center;
+}
+
+.experiencia-cta__title {
+  margin: 0;
+  color: #1F193D;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.experiencia-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 40px;
+  margin-top: 32px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 3px;
+  background: #ED9403;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .experiencia-cta {
+    padding-block: 50px;
+  }
+
+  .experiencia-cta__title {
+    font-size: 32px;
+  }
+
+  .experiencia-cta__button {
+    padding-inline: 18px;
+    font-size: 17px;
   }
 }
 

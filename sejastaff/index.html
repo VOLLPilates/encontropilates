@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#06454A">
+
+    <title>Seja Staff | 11º Encontro Brasileiro de Pilates 2026</title>
+    <meta name="description" content="Faça parte da equipe de Staff Voluntário do 11º Encontro Brasileiro de Pilates 2026.">
+
+    <link rel="icon" type="image/png" href="../assets/images/favicon_voll_pilates_institucional.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon_voll_pilates_institucional.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <style>
+      .staff-hero {
+        display: flex;
+        align-items: center;
+        min-height: 650px;
+        padding-block: 72px;
+        background-color: #06454a;
+        background-image: url("./assets/images/background_sejaumstaff_voluntario_encontro2026.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: #ffffff;
+      }
+
+      .staff-hero__content {
+        width: min(100%, 720px);
+      }
+
+      .staff-hero__title {
+        max-width: 680px;
+        margin: 0;
+        color: #ed9403;
+        font-family: "Montserrat", sans-serif;
+        font-size: 31px;
+        font-weight: 800;
+        line-height: 1.12;
+      }
+
+      .staff-hero__subtitle {
+        max-width: 650px;
+        margin: 20px 0 0;
+        color: #64d1d0;
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(20px, 2vw, 26px);
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .staff-hero__text {
+        max-width: 680px;
+        margin-top: 22px;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.65;
+      }
+
+      .staff-hero__text p {
+        margin: 0;
+      }
+
+      .staff-hero__text p + p {
+        margin-top: 14px;
+      }
+
+      .staff-hero__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        margin-top: 28px;
+        padding: 13px 28px;
+        border: 0;
+        border-radius: 999px;
+        background: #ed9403;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .staff-about {
+        padding-block: 72px;
+        background: #ffffff;
+      }
+
+      .staff-about__row {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: center;
+        gap: 54px;
+      }
+
+      .staff-about__image {
+        display: block;
+        width: min(100%, 560px);
+        height: auto;
+        margin-inline: auto;
+      }
+
+      .staff-about__title {
+        max-width: 680px;
+        margin: 0;
+        color: #00726b;
+        font-family: "Montserrat", sans-serif;
+        font-size: 31px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .staff-about__text {
+        max-width: 680px;
+        margin-top: 24px;
+        color: #1f193d;
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.65;
+      }
+
+      .staff-about__text p {
+        margin: 0;
+      }
+
+      .staff-about__text p + p {
+        margin-top: 16px;
+      }
+
+      .staff-eligibility {
+        display: flex;
+        align-items: center;
+        min-height: 650px;
+        padding-block: 72px;
+        background-color: #087d78;
+        background-image: url("./assets/images/background_quem_pode_ser_staff.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: #ffffff;
+      }
+
+      .staff-eligibility__content {
+        width: min(100%, 720px);
+      }
+
+      .staff-eligibility__title {
+        margin: 0;
+        color: #ed9403;
+        font-family: "Montserrat", sans-serif;
+        font-size: 31px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .staff-eligibility__intro {
+        max-width: 680px;
+        margin: 20px 0 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      .staff-eligibility__list {
+        display: grid;
+        gap: 9px;
+        max-width: 680px;
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .staff-eligibility__item {
+        position: relative;
+        padding-left: 24px;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .staff-eligibility__item::before {
+        content: "•";
+        position: absolute;
+        left: 4px;
+        top: 0;
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .staff-roles {
+        padding-block: 38px 42px;
+        background: #ffffff;
+        color: #1f193d;
+      }
+
+      .staff-roles__header {
+        max-width: 680px;
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .staff-roles__title {
+        margin: 0;
+        color: #00726b;
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .staff-roles__subtitle {
+        margin: 6px 0 0;
+        color: #00726b;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      .staff-roles__intro,
+      .staff-roles__closing {
+        max-width: 620px;
+        margin: 14px auto 0;
+        color: #1f193d;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .staff-roles__label {
+        margin: 20px 0 0;
+        color: #1f193d;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .staff-roles__grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 20px;
+        max-width: 900px;
+        margin: 24px auto 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .staff-role-card {
+        display: flex;
+        grid-column: span 3;
+        align-items: center;
+        justify-content: center;
+        min-height: 70px;
+        padding: 12px 16px;
+        border-radius: 14px 0 14px 0;
+        background: #007d75;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.35;
+        text-align: center;
+      }
+
+      .staff-role-card:nth-child(n + 5) {
+        grid-column: span 3;
+      }
+
+      .staff-role-card:nth-child(5) {
+        grid-column: 2 / span 3;
+      }
+
+      .staff-roles__closing {
+        max-width: 590px;
+        margin-top: 24px;
+      }
+
+      .staff-process {
+        padding-block: 34px 42px;
+        background: #7d5191;
+        color: #ffffff;
+      }
+
+      .staff-process__header {
+        max-width: 720px;
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .staff-process__title {
+        margin: 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .staff-process__intro {
+        margin: 14px 0 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.45;
+      }
+
+      .staff-process__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        max-width: 714px;
+        margin: 30px auto 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .staff-process-card {
+        min-height: 283px;
+        padding: 20px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 24px 0 24px 0;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .staff-process-card__icon {
+        display: block;
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 12px;
+        object-fit: contain;
+      }
+
+      .staff-process-card__title {
+        margin: 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      .staff-process-card__text {
+        margin: 10px 0 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 767px) {
+        .staff-hero {
+          min-height: 720px;
+          align-items: flex-start;
+          padding-block: 58px;
+          background-position: 62% center;
+        }
+
+        .staff-hero__content {
+          padding: 26px 22px;
+          background: rgba(4, 57, 61, 0.86);
+          border-radius: 12px;
+        }
+
+        .staff-about {
+          padding-block: 52px;
+        }
+
+        .staff-about__row {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+
+        .staff-eligibility {
+          min-height: 760px;
+          align-items: flex-start;
+          padding-block: 52px;
+          background-position: 62% center;
+        }
+
+        .staff-eligibility__content {
+          padding: 26px 22px;
+          background: rgba(5, 103, 99, 0.9);
+          border-radius: 12px;
+        }
+
+        .staff-roles {
+          padding-block: 42px 48px;
+        }
+
+        .staff-roles__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .staff-role-card,
+        .staff-role-card:nth-child(n + 5) {
+          grid-column: auto;
+          min-height: 90px;
+        }
+
+        .staff-process {
+          padding-block: 46px 52px;
+        }
+
+        .staff-process__grid {
+          grid-template-columns: 1fr;
+          max-width: 360px;
+        }
+
+        .staff-process-card {
+          min-height: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+    <header id="home" class="site-header">
+      <div class="site-header__row row">
+        <a class="site-header__brand" href="../index.html" aria-label="11º Encontro Brasileiro de Pilates 2026">
+          <img
+            class="site-header__logo"
+            src="../assets/images/logo-11-encontro-brasileiro-de-pilates-branco.png"
+            alt="11º Encontro Brasileiro de Pilates"
+            width="198"
+            height="65"
+          >
+        </a>
+
+        <button
+          class="site-header__toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-controls="menu-principal"
+          aria-expanded="false"
+        >
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+        </button>
+
+        <nav id="menu-principal" class="site-nav" aria-label="Menu principal">
+          <ul class="site-nav__list">
+            <li class="site-nav__item"><a class="site-nav__link" href="../index.html">Home</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="../entenda-o-encontro/index.html">Entenda o Encontro</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="../palestrantes/index.html">Palestrantes</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="../local/index.html">Local</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="../index.html#ingressos">Valores</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="../index.html#pilates-trip">Pilates Trip</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="../programacao/index.html">Programação</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html" aria-current="page">Seja Staff</a></li>
+            <li class="site-nav__item">
+              <span class="site-nav__link site-nav__link--featured">ÚLTIMOS INGRESSOS DISPONÍVEIS</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo-principal" class="site-main" tabindex="-1">
+      <section class="staff-hero" aria-labelledby="staff-hero-title">
+        <div class="row">
+          <div class="staff-hero__content">
+            <h1 id="staff-hero-title" class="staff-hero__title">Seja um Staff Voluntário do<br> Encontro Brasileiro de Pilates</h1>
+            <p class="staff-hero__subtitle">Aprenda, conecte-se e viva os bastidores do maior evento de Pilates do Brasil.</p>
+
+            <div class="staff-hero__text">
+              <p>O Programa de Staff Voluntário do Encontro Brasileiro de Pilates é a oportunidade perfeita para quem deseja fazer parte da realização de um grande evento, adquirir experiência, ampliar sua rede de contatos e acompanhar de perto os principais profissionais do mercado.</p>
+              <p>Ao integrar nossa equipe, você vivenciará os bastidores do evento, colaborará diretamente com a organização e terá uma experiência única de aprendizado, desenvolvimento e conexão com a comunidade do Pilates.</p>
+            </div>
+
+            <a
+              class="staff-hero__cta"
+              href="https://wa.me/5519986026122?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20patrocinador%21"
+              target="_blank"
+              rel="noopener noreferrer"
+            >QUERO SER UM STAFF</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="staff-about" aria-labelledby="staff-about-title">
+        <div class="staff-about__row row">
+          <img
+            class="staff-about__image"
+            src="./assets/images/o_que_e_ser_um_staff_voluntario_encontro.png"
+            alt="Equipe entregando um kit durante o Encontro Brasileiro de Pilates"
+            width="640"
+            height="573"
+            loading="lazy"
+          >
+
+          <div class="staff-about__content">
+            <h2 id="staff-about-title" class="staff-about__title">O que é ser um Staff Voluntário?</h2>
+
+            <div class="staff-about__text">
+              <p>Ser Staff Voluntário significa fazer parte da equipe responsável por proporcionar uma experiência incrível para centenas de participantes durante o Encontro Brasileiro de Pilates.</p>
+              <p>Os voluntários atuam apoiando diferentes atividades operacionais, institucionais e de atendimento, contribuindo para que palestras, workshops e demais ações do evento aconteçam de forma organizada e eficiente.</p>
+              <p>A participação acontece por meio de escalas de horários previamente definidas pela organização, permitindo que os Staffs colaborem ativamente com o evento e também vivenciem momentos de aprendizado ao longo da programação.</p>
+              <p>Todo o treinamento necessário para atuação é realizado de forma online antes do evento.</p>
+            </div>
+
+            <a
+              class="staff-hero__cta"
+              href="https://wa.me/5519986026122?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20patrocinador%21"
+              target="_blank"
+              rel="noopener noreferrer"
+            >QUERO SER UM STAFF</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="staff-eligibility" aria-labelledby="staff-eligibility-title">
+        <div class="row">
+          <div class="staff-eligibility__content">
+            <h2 id="staff-eligibility-title" class="staff-eligibility__title">Quem pode participar?</h2>
+            <p class="staff-eligibility__intro">O Programa de Staff Voluntário é destinado a pessoas apaixonadas pelo universo do Pilates e que desejam contribuir para a realização do evento.</p>
+
+            <ul class="staff-eligibility__list">
+              <li class="staff-eligibility__item">Ter idade mínima de 18 anos;</li>
+              <li class="staff-eligibility__item">Ser estudante ou profissional de Fisioterapia;</li>
+              <li class="staff-eligibility__item">Ser estudante ou profissional de Educação Física;</li>
+              <li class="staff-eligibility__item">Ser estudante ou profissional de Enfermagem;</li>
+              <li class="staff-eligibility__item">Ser estudante ou profissional de Marketing;</li>
+              <li class="staff-eligibility__item">Ser estudante ou profissional de Publicidade e Propaganda;</li>
+              <li class="staff-eligibility__item">Ou ser praticante do Método Pilates;</li>
+              <li class="staff-eligibility__item">Ter disponibilidade para cumprir as escalas definidas pela organização;</li>
+              <li class="staff-eligibility__item">Participar do treinamento online obrigatório.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="staff-roles" aria-labelledby="staff-roles-title">
+        <div class="row">
+          <div class="staff-roles__header">
+            <h2 id="staff-roles-title" class="staff-roles__title">Área de Atuação</h2>
+            <h3 class="staff-roles__subtitle">Comunicação e Institucional</h3>
+            <p class="staff-roles__intro">Os voluntários desta área atuam diretamente no suporte aos participantes e no apoio às atividades institucionais do evento.</p>
+            <p class="staff-roles__label">Principais atividades:</p>
+          </div>
+
+          <ul class="staff-roles__grid">
+            <li class="staff-role-card">Orientação do público</li>
+            <li class="staff-role-card">Captação de conteúdo para as redes sociais</li>
+            <li class="staff-role-card">Apoio ao credenciamento</li>
+            <li class="staff-role-card">Organização dos espaços do evento</li>
+            <li class="staff-role-card">Atendimento aos participantes</li>
+            <li class="staff-role-card">Suporte às atividades institucionais</li>
+            <li class="staff-role-card">Auxílio à equipe organizadora durante a programação</li>
+          </ul>
+
+          <p class="staff-roles__closing">Essa atuação é essencial para garantir uma experiência acolhedora, organizada e eficiente para todos os participantes.</p>
+        </div>
+      </section>
+
+      <section class="staff-process" aria-labelledby="staff-process-title">
+        <div class="row">
+          <div class="staff-process__header">
+            <h2 id="staff-process-title" class="staff-process__title">Como funciona o programa?</h2>
+            <p class="staff-process__intro"><strong>Entre em contato</strong> com nossa equipe <strong>para receber mais informações</strong><br> sobre o processo de seleção e disponibilidade de vagas.</p>
+          </div>
+
+          <ul class="staff-process__grid">
+            <li class="staff-process-card">
+              <img class="staff-process-card__icon" src="./assets/images/como_funciona_staff_icone01.png" alt="" width="52" height="52">
+              <h3 class="staff-process-card__title">Treinamento<br>Online</h3>
+              <p class="staff-process-card__text">Todos os Staffs selecionados participam de um treinamento online obrigatório, onde recebem informações sobre procedimentos, responsabilidades, atendimento ao público e funcionamento geral do evento.</p>
+            </li>
+
+            <li class="staff-process-card">
+              <img class="staff-process-card__icon" src="./assets/images/como_funciona_staff_icone02.png" alt="" width="52" height="52">
+              <h3 class="staff-process-card__title">Escalas de<br>Atuação</h3>
+              <p class="staff-process-card__text">As atividades são distribuídas em escalas organizadas pela equipe responsável, considerando a programação de workshops, palestras e demais atividades.</p>
+            </li>
+
+            <li class="staff-process-card">
+              <img class="staff-process-card__icon" src="./assets/images/como_funciona_staff_icone01.png" alt="" width="52" height="52">
+              <h3 class="staff-process-card__title">Experiência<br>Prática</h3>
+              <p class="staff-process-card__text">Durante o evento, os voluntários trabalham lado a lado com a equipe organizadora, vivenciando os bastidores e contribuindo diretamente para o sucesso do encontro.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__row row">
+        <div class="site-footer__text">© 2014-2026 11º Encontro Brasileiro de Pilates. Grupo VOLL. Todos os direitos reservados.</div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+  </body>
+</html>
