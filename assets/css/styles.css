@@ -1849,6 +1849,116 @@ section[id] {
   }
 }
 
+/* Pilates Trip — hero. Fundo (engrenagens) aplicado inline no HTML,
+   pois vive em ./assets/images/ dentro da própria página. */
+.trip-hero {
+  position: relative;
+  padding: 12px 0 0;
+  background-color: #7C7C7C;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.trip-hero__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* A imagem já vem com fade transparente nas bordas — sem radius,
+   sem borda: ela se dissolve no fundo e a faixa fica logo abaixo. */
+.trip-hero__foto {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
+
+.trip-hero__logo {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.trip-hero__titulo {
+  max-width: 900px;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.trip-hero__titulo strong {
+  font-weight: 800;
+}
+
+.trip-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 14px 28px;
+  border-radius: 2px;
+  background: #02C9BC;
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
+}
+
+.trip-hero__cta:hover,
+.trip-hero__cta:focus-visible {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.trip-hero__faixa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .trip-hero {
+    padding-top: 24px;
+  }
+
+  .trip-hero__row {
+    gap: 28px;
+    padding-bottom: 24px;
+  }
+
+  .trip-hero__logo {
+    max-width: 480px;
+  }
+
+  .trip-hero__titulo {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .trip-hero__cta {
+    min-height: 62px;
+    padding: 16px 40px;
+    font-size: 20px;
+  }
+}
+
 /* Workshops Práticos (Entenda o Encontro). */
 .workshops-section {
   padding-block: 64px 72px;
