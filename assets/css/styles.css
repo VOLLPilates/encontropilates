@@ -1959,6 +1959,343 @@ section[id] {
   }
 }
 
+/* Pilates Trip — SAVE THE DATE. Fundo preto, textos brancos, dourado no título. */
+.trip-save {
+  padding: 40px 0 60px;
+  background: #000000;
+  color: #ffffff;
+}
+
+.trip-save__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.trip-save__title {
+  color: #9C7900;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.trip-save__data {
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.trip-save__local {
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.trip-save__local strong {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.trip-save__lead {
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.trip-save__desc {
+  max-width: 780px;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.trip-save__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  min-height: 54px;
+  padding: 14px 28px;
+  border-radius: 2px;
+  background: #02C9BC;
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.trip-save__cta:hover,
+.trip-save__cta:focus-visible {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.trip-save__cta--repeat {
+  margin-top: 24px;
+}
+
+.trip-save__workshops-titulo {
+  margin: 40px 0 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.trip-save__workshops-titulo span {
+  display: block;
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.trip-workshops {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.trip-workshop {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+}
+
+.trip-workshop__icon {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.trip-workshop__conteudo {
+  flex: 1;
+  min-width: 0;
+}
+
+.trip-workshop__titulo {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.trip-workshop__texto {
+  margin: 6px 0 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.trip-save__banner {
+  display: block;
+  width: 100%;
+  max-width: 1005px;
+  height: auto;
+  margin: 30px auto 0;
+  border-radius: 4px;
+}
+
+.trip-trippers {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.trip-tripper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trip-tripper__foto {
+  display: block;
+  width: 100%;
+  max-width: 216px;
+  height: auto;
+  aspect-ratio: 216 / 341;
+  object-fit: cover;
+}
+
+.trip-tripper__nome {
+  margin: 12px 0 0;
+  color: #9C7900;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.trip-tripper__bio {
+  margin: 8px 0 0;
+  max-width: 216px;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .trip-save {
+    padding: 60px 0 80px;
+  }
+
+  .trip-save__title {
+    font-size: 42px;
+  }
+
+  .trip-save__data {
+    font-size: 28px;
+  }
+
+  .trip-save__local {
+    font-size: 19px;
+  }
+
+  .trip-save__local strong {
+    font-size: 21px;
+  }
+
+  .trip-save__lead {
+    font-size: 19px;
+  }
+
+  .trip-save__desc {
+    font-size: 19px;
+  }
+
+  .trip-save__workshops-titulo {
+    margin-top: 60px;
+    font-size: 26px;
+  }
+
+  .trip-save__workshops-titulo span {
+    font-size: 32px;
+  }
+
+  .trip-workshops {
+    margin-top: 32px;
+    gap: 28px;
+  }
+
+  .trip-workshop__icon {
+    width: 92px;
+    height: 92px;
+  }
+
+  .trip-workshop__titulo {
+    font-size: 22px;
+  }
+
+  .trip-save__cta {
+    min-height: 58px;
+    font-size: 18px;
+    padding: 15px 34px;
+  }
+}
+
+@media (min-width: 900px) {
+  .trip-trippers {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Pilates Trip — CERTIFICADO. Fundo branco, título dourado + mockup. */
+.trip-cert {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.trip-cert__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.trip-cert__title {
+  margin: 0;
+  color: #9C7900;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  max-width: 520px;
+}
+
+.trip-cert__img {
+  display: block;
+  width: 100%;
+  max-width: 495px;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .trip-cert {
+    padding: 0;
+  }
+
+  .trip-cert__row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .trip-cert__title {
+    flex: 1;
+    font-size: 34px;
+    max-width: 420px;
+  }
+
+  .trip-cert__img {
+    flex-shrink: 0;
+    width: 495px;
+  }
+}
+
 /* Workshops Práticos (Entenda o Encontro). */
 .workshops-section {
   padding-block: 64px 72px;
