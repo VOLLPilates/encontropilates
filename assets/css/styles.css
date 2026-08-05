@@ -1862,6 +1862,20 @@ section[id] {
   isolation: isolate;
 }
 
+.trip-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.25) 28%,
+    rgba(0, 0, 0, 0.56) 55%,
+    #000000 100%
+  );
+  pointer-events: none;
+}
+
 .trip-hero__row {
   display: flex;
   flex-direction: column;
@@ -1883,8 +1897,11 @@ section[id] {
 .trip-hero__logo {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   height: auto;
+  position: relative;
+  z-index: 4;
+  margin-top: -130px;
 }
 
 .trip-hero__titulo {
@@ -1944,7 +1961,8 @@ section[id] {
   }
 
   .trip-hero__logo {
-    max-width: 480px;
+    max-width: 520px;
+    margin-top: -190px;
   }
 
   .trip-hero__titulo {
@@ -1957,7 +1975,7 @@ section[id] {
     padding: 16px 40px;
     font-size: 20px;
   }
-}
+  }
 
 /* Pilates Trip — SAVE THE DATE. Fundo preto, textos brancos, dourado no título. */
 .trip-save {
@@ -2056,20 +2074,21 @@ section[id] {
 }
 
 .trip-save__workshops-titulo {
-  margin: 40px 0 0;
-  color: #ffffff;
-  font-family: "Montserrat", var(--font-primary);
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
-}
+    margin: 40px 0 0;
+    color: #9c7900;
+    font-family: "Montserrat", var(--font-primary);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
 
 .trip-save__workshops-titulo span {
-  display: block;
-  margin-top: 4px;
-  font-size: 24px;
-  font-weight: 800;
-}
+    display: block;
+    margin-top: 4px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+  }
 
 .trip-workshops {
   list-style: none;
@@ -2087,6 +2106,10 @@ section[id] {
   align-items: flex-start;
   gap: 20px;
   text-align: left;
+  padding: 24px 20px 20px;
+  background: #1C1C1C;
+  border: 2px solid #9C7900;
+  border-radius: 10px;
 }
 
 .trip-workshop__icon {
@@ -2126,6 +2149,59 @@ section[id] {
   height: auto;
   margin: 30px auto 0;
   border-radius: 4px;
+}
+
+/* Sub-bloco "ESSA EXPERIÊNCIA É PRA VOCÊ QUE:" — título + 5 pílulas douradas. */
+.trip-para-voce__titulo {
+  margin: 40px 0 0;
+  color: #9C7900;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.trip-para-voce {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trip-para-voce__item {
+  padding: 14px 22px;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  background: #9C7900;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .trip-para-voce__titulo {
+    margin-top: 60px;
+    font-size: 28px;
+  }
+
+  .trip-para-voce {
+    margin-top: 28px;
+    gap: 16px;
+  }
+
+  .trip-para-voce__item {
+    font-size: 17px;
+    padding: 16px 26px;
+  }
 }
 
 .trip-trippers {
@@ -2239,13 +2315,87 @@ section[id] {
   }
 }
 
-/* Pilates Trip — CERTIFICADO. Fundo branco, título dourado + mockup. */
+/* Pilates Trip — CERTIFICADO. Fundo branco, título grande dourado + mockup grande. */
 .trip-cert {
-  padding: 40px 0;
-  background: #ffffff;
-}
+    position: relative;
+    z-index: 2;
+    margin: -18px 0 -18px;
+    padding: 12px 0 10px;
+    background: #ffffff;
+  }
 
 .trip-cert__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+.trip-cert__title {
+    margin: 0;
+    color: #9C7900;
+    font-family: "Montserrat", var(--font-primary);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    max-width: 520px;
+    white-space: nowrap;
+  }
+
+.trip-cert__img {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+  }
+
+  @media (min-width: 900px) {
+    .trip-cert {
+      margin: -26px 0 -26px;
+      padding: 0;
+    }
+
+    .trip-cert__row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: 1100px;
+      max-width: 1100px;
+      height: 274.69px;
+      padding-inline: 0;
+      text-align: left;
+    }
+
+    .trip-cert__title {
+      flex: 0 0 460px;
+      font-size: 31px;
+      line-height: 1.08;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .trip-cert__img {
+      flex-shrink: 0;
+      width: 505px;
+      max-width: 505px;
+      margin: -22px -6px -24px 0;
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+/* Pilates Trip — DO MAT À GESTÃO. Fundo preto, título dourado, caixa Lote 1
+   destacada em dourado sólido, botão branco, Lote 2 esmaecido. */
+.trip-mat {
+  padding: 60px 0;
+  background: #000000;
+  color: #ffffff;
+}
+
+.trip-mat__row {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2253,46 +2403,331 @@ section[id] {
   text-align: center;
 }
 
-.trip-cert__title {
+.trip-mat__title {
   margin: 0;
   color: #9C7900;
   font-family: "Montserrat", var(--font-primary);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.trip-mat__detalhes {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trip-mat__linha {
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.trip-mat__linha dt {
+  display: inline;
+  color: #9C7900;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.trip-mat__linha dd {
+  display: inline;
+  margin: 0;
+}
+
+/* Ambas as caixas (Lote 1 e Lote 2) têm a mesma largura no mobile.
+   Lote 1 = dourado sólido; Lote 2 = dourado escuro (#5D4800). */
+.trip-lote,
+.trip-lote2 {
+  width: 100%;
+  max-width: 335px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trip-lote {
+  gap: 4px;
+  margin-top: 12px;
+  padding: 25px 40px 15px;
+  background: #9C7900;
+}
+
+.trip-lote__valor {
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.trip-lote__marca {
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.trip-lote__preco {
+  margin-top: 6px;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.trip-mat__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 45px;
+  padding: 8px 22px;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.trip-mat__cta:hover,
+.trip-mat__cta:focus-visible {
+  transform: scale(1.03);
+  filter: brightness(0.96);
+}
+
+.trip-lote2 {
+  gap: 6px;
+  margin-top: 12px;
+  padding: 20px 40px;
+  background: #5D4800;
+}
+
+.trip-lote2__valor {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
   font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.trip-lote2__preco {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.trip-mat__certificado {
+  margin: 24px 0 0;
+  color: #9C7900;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.trip-mat__vagas {
+  margin: 4px 0 0;
+  color: #ffffff;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  .trip-mat {
+    padding: 80px 0 60px;
+  }
+
+  .trip-mat__title {
+    font-size: 36px;
+  }
+
+  .trip-mat__linha {
+    font-size: 19px;
+  }
+
+  .trip-lote__valor {
+    font-size: 30px;
+  }
+
+  .trip-lote__preco {
+    font-size: 28px;
+  }
+
+  .trip-mat__cta {
+    font-size: 17px;
+    min-height: 48px;
+    min-width: 210px;
+  }
+
+  .trip-lote2__valor {
+    font-size: 26px;
+  }
+
+  .trip-lote2__preco {
+    font-size: 30px;
+  }
+
+  .trip-mat__certificado {
+    font-size: 22px;
+  }
+}
+
+/* Pilates Trip — FAQ. Fundo branco, título dourado, itens em cards com borda. */
+.trip-faq {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.trip-faq__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.trip-faq__title {
+  margin: 0;
+  color: #9C7900;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 26px;
   font-weight: 800;
   line-height: 1.2;
-  letter-spacing: 0.01em;
-  max-width: 520px;
+  letter-spacing: 0.02em;
+  text-align: center;
 }
 
-.trip-cert__img {
-  display: block;
+.trip-faq__lista {
   width: 100%;
-  max-width: 495px;
-  height: auto;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-@media (min-width: 900px) {
-  .trip-cert {
-    padding: 0;
+.trip-faq-item {
+  border: 1px solid #d9d5c2;
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.trip-faq-item__pergunta {
+  position: relative;
+  padding: 18px 48px 18px 22px;
+  color: #1f193d;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+  list-style: none;
+}
+
+.trip-faq-item__pergunta::-webkit-details-marker {
+  display: none;
+}
+
+.trip-faq-item__pergunta::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 10px;
+  height: 10px;
+  margin-top: -7px;
+  border-right: 2px solid #9C7900;
+  border-bottom: 2px solid #9C7900;
+  transform: rotate(45deg);
+  transition: transform 200ms ease;
+}
+
+.trip-faq-item[open] .trip-faq-item__pergunta::after {
+  margin-top: -3px;
+  transform: rotate(225deg);
+}
+
+.trip-faq-item__resposta {
+  padding: 0 22px 18px;
+  color: #55516b;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.trip-faq-item__resposta p {
+  margin: 0;
+}
+
+.trip-faq__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 28px;
+  border-radius: 2px;
+  background: #02C9BC;
+  color: #000000;
+  font-family: "Montserrat", var(--font-primary);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.trip-faq__cta:hover,
+.trip-faq__cta:focus-visible {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+@media (min-width: 768px) {
+  .trip-faq {
+    padding: 72px 0;
   }
 
-  .trip-cert__row {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    text-align: left;
+  .trip-faq__title {
+    font-size: 32px;
   }
 
-  .trip-cert__title {
-    flex: 1;
-    font-size: 34px;
-    max-width: 420px;
+  .trip-faq-item__pergunta {
+    font-size: 18px;
+    padding: 20px 52px 20px 26px;
   }
 
-  .trip-cert__img {
-    flex-shrink: 0;
-    width: 495px;
+  .trip-faq-item__resposta {
+    padding: 0 26px 22px;
+    font-size: 16px;
+  }
+
+  .trip-faq__cta {
+    font-size: 18px;
+    padding: 15px 34px;
   }
 }
 
