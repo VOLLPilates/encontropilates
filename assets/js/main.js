@@ -79,15 +79,16 @@
 
       if (item.open) {
         content.style.height = `${content.scrollHeight}px`;
-        // Lê o layout para o navegador aplicar a altura atual antes de ir a zero,
-        // senão as duas mudanças caem no mesmo recálculo e não há transição.
-        void content.offsetHeight;
-        content.style.height = "0px";
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            content.style.height = "0px";
 
-        content.addEventListener("transitionend", () => {
-          item.open = false;
-          finish();
-        }, { once: true });
+            content.addEventListener("transitionend", () => {
+              item.open = false;
+              finish();
+            }, { once: true });
+          });
+        });
 
         return;
       }
@@ -97,10 +98,12 @@
       const target = content.scrollHeight;
 
       content.style.height = "0px";
-      void content.offsetHeight;
-      content.style.height = `${target}px`;
-
-      content.addEventListener("transitionend", finish, { once: true });
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          content.style.height = `${target}px`;
+          content.addEventListener("transitionend", finish, { once: true });
+        });
+      });
     });
   });
 })();
@@ -317,12 +320,15 @@
       // Reposiciona embaixo e invisível, sem animar, para então subir.
       content.classList.add("is-entering");
       content.classList.remove("is-leaving");
-      void content.offsetHeight;
-      content.classList.remove("is-entering");
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          content.classList.remove("is-entering");
 
-      window.setTimeout(() => {
-        animating = false;
-      }, SLIDE_MS);
+          window.setTimeout(() => {
+            animating = false;
+          }, SLIDE_MS);
+        });
+      });
     }, SLIDE_MS);
   };
 
@@ -345,20 +351,7 @@
   };
 
   cards.forEach((card, index) => {
-    const speaker = speakers[index];
-
-    card.setAttribute("role", "button");
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `Ver biografia de ${speaker.name}`);
-
-    card.addEventListener("click", () => openModal(index));
-
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openModal(index);
-      }
-    });
+    card.querySelector(".speaker-card__button")?.addEventListener("click", () => openModal(index));
   });
 
   prev.addEventListener("click", () => goTo(current - 1));
@@ -505,10 +498,11 @@
         previousOffsets.set(i, offset);
 
         if (jumped) {
-          // Lê uma propriedade de layout para o navegador aplicar a posição
-          // agora, sem animar, antes de devolver a transição ao slide.
-          void slide.offsetWidth;
-          slide.style.transition = "";
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              slide.style.transition = "";
+            });
+          });
         }
       });
 

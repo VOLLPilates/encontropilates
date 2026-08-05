@@ -1401,18 +1401,32 @@ section[id] {
 }
 
 .carousel__dot {
-  width: 8px;
-  height: 8px;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: -18px;
   padding: 0;
   border: 0;
   border-radius: 50%;
+  background: transparent;
+}
+
+.carousel__dot::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   background: #008A85;
+  content: "";
+  transform: translate(-50%, -50%);
   transition: background 180ms ease, transform 180ms ease;
 }
 
-.carousel__dot[aria-current="true"] {
+.carousel__dot[aria-current="true"]::before {
   background: var(--color-purple);
-  transform: scale(1.25);
+  transform: translate(-50%, -50%) scale(1.25);
 }
 
 .palestrantes-section {
@@ -1438,12 +1452,22 @@ section[id] {
 .speaker-card {
   overflow: hidden;
   border-radius: 8px;
-  cursor: pointer;
 }
 
-.speaker-card:focus-visible {
+.speaker-card__button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  color: inherit;
+  background: transparent;
+  text-align: inherit;
+}
+
+.speaker-card__button:focus-visible {
   outline: 3px solid var(--color-cyan);
-  outline-offset: 3px;
+  outline-offset: -3px;
 }
 
 .speaker-card__photo {
@@ -1454,8 +1478,8 @@ section[id] {
   transition: transform 400ms ease;
 }
 
-.speaker-card:hover .speaker-card__photo,
-.speaker-card:focus-visible .speaker-card__photo {
+.speaker-card__button:hover .speaker-card__photo,
+.speaker-card__button:focus-visible .speaker-card__photo {
   transform: scale(1.1);
 }
 
