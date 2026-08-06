@@ -1,0 +1,20 @@
+@media (max-width: 767px) {
+  .palestrantes-section .cards-grid--4 {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .palestrantes-section .speaker-card {
+    width: 100%;
+    max-width: 203px;
+  }
+
+  .vips-grid {
+    row-gap: 24px;
+  }
+
+  .vips-grid .vip-card {
+    flex-basis: 100%;
+  }
+}

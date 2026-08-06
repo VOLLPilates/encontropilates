@@ -775,6 +775,16 @@ section[id] {
   height: auto;
 }
 
+@media (max-width: 767px) {
+  .site-main > #palestrantes {
+    display: none;
+  }
+
+  .patrocinadores-grid .patrocinador {
+    flex-basis: 100%;
+  }
+}
+
 .faq-section {
   padding-block: var(--section-padding);
   background: var(--color-green);
@@ -1537,14 +1547,39 @@ section[id] {
 
 .vip-card__name {
   margin-top: 12px;
-  color: var(--color-white);
+  color: #94E4DD;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.3;
+}
+
+.vip-card__name strong {
+  font-weight: 700;
 }
 
 .vips-section__cta {
   margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  .palestrantes-section .cards-grid--4 {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .palestrantes-section .speaker-card {
+    width: 100%;
+    max-width: 203px;
+  }
+
+  .vips-grid {
+    row-gap: 24px;
+  }
+
+  .vips-grid .vip-card {
+    flex-basis: 100%;
+  }
 }
 
 /* Página de programação (/programacao/). */
@@ -3242,15 +3277,91 @@ section[id] {
 
 @media (max-width: 767px) {
   .prog-dia {
-    overflow: hidden;
+    margin-top: 38px;
   }
 
   .prog-lista {
-    padding-bottom: 8px;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .prog-cabecalho {
-    overflow-x: auto;
+    display: none;
+  }
+
+  .prog-bloco,
+  .prog-lista--workshops .prog-bloco {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border-bottom-width: 4px;
+  }
+
+  .prog-bloco__hora,
+  .prog-lista--workshops .prog-bloco__hora {
+    position: static;
+    min-height: 0;
+    padding: 11px 14px;
+    box-shadow: none;
+    font-size: 15px;
+  }
+
+  .prog-bloco__aulas,
+  .prog-lista--workshops .prog-bloco__aulas {
+    display: block;
+    width: 100%;
+  }
+
+  .prog-aula,
+  .prog-lista--workshops .prog-aula {
+    width: 100%;
+    min-height: 0;
+    padding: 15px 14px;
+    border-top: 3px solid #ffffff;
+    border-left: 0;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .prog-aula,
+  .prog-aula * {
+    color: #000000 !important;
+  }
+
+  .prog-bloco__aulas .prog-aula:first-child {
+    border-top: 0;
+  }
+
+  .prog-aula--vazia {
+    display: none;
+  }
+
+  .prog-lista--nome-tema .prog-aula:first-child:nth-last-child(2),
+  .prog-lista--nome-tema .prog-aula:nth-child(2):last-child,
+  .prog-lista--workshops .prog-aula,
+  .prog-lista--workshops .prog-bloco--intervalo .prog-aula {
+    width: 100%;
+    min-height: 0;
+    flex-basis: auto;
+  }
+
+  .prog-lista--workshops {
+    overflow: visible;
+    cursor: default;
+  }
+
+  .prog-lista--workshops.is-dragging {
+    cursor: default;
+    user-select: auto;
+  }
+
+  .prog-grupo {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .prog-dia__titulo {
+    font-size: 19px;
   }
 }
 
