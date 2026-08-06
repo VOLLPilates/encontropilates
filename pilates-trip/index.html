@@ -25,6 +25,7 @@
     <link rel="icon" type="image/png" href="../assets/images/favicon-encontro-pilates.png">
     <link rel="apple-touch-icon" href="../assets/images/favicon-encontro-pilates.png">
     <link rel="preload" href="./assets/images/engrenagensfumaca.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="./assets/images/palestrantes_trip_encontro4-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,10 +83,13 @@
           <img
             class="trip-hero__foto"
             src="./assets/images/palestrantes_trip_encontro4.webp"
+            srcset="./assets/images/palestrantes_trip_encontro4-mobile.webp 640w, ./assets/images/palestrantes_trip_encontro4.webp 900w"
+            sizes="(max-width: 767px) 100vw, 900px"
             alt="Trippers do Pilates Trip: cinco mulheres que conduzem a imersão"
             width="900"
             height="470"
             loading="eager"
+            fetchpriority="high"
           >
 
           <img
@@ -110,6 +114,8 @@
         <img
           class="trip-hero__faixa"
           src="./assets/images/faixa_pilatestrip2025-1280x87.webp"
+          srcset="./assets/images/faixa_pilatestrip2025-mobile.webp 768w, ./assets/images/faixa_pilatestrip2025-1280x87.webp 1280w"
+          sizes="100vw"
           alt=""
           width="1280"
           height="87"
@@ -169,33 +175,48 @@
             </li>
           </ul>
 
-          <img class="trip-save__banner" src="./assets/images/nova_experiencia.webp" alt="Trippers apresentando a nova experiência do Pilates Trip" width="1005" height="630" loading="lazy">
+          <img class="trip-save__banner" src="./assets/images/nova_experiencia.webp" srcset="./assets/images/nova_experiencia-mobile.webp 640w, ./assets/images/nova_experiencia.webp 1039w" sizes="(max-width: 767px) 100vw, 1005px" alt="Trippers apresentando a nova experiência do Pilates Trip" width="1005" height="630" loading="lazy">
 
           <a class="trip-save__cta trip-save__cta--repeat" href="https://pay.hub.la/vmE8am9KeWLSWLaIFLDH" target="_blank" rel="noopener noreferrer">EU QUERO ESSA EXPERIÊNCIA &ndash; R$249</a>
 
           <ul class="trip-trippers">
             <li class="trip-tripper">
-              <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_larissa.jpg" alt="Larissa Moraes" width="216" height="341" loading="lazy">
+              <picture style="display: contents;">
+                <source media="(max-width: 767px)" srcset="./assets/images/palestrante_trip_larissa.webp">
+                <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_larissa.jpg" alt="Larissa Moraes" width="216" height="341" loading="lazy">
+              </picture>
               <h4 class="trip-tripper__nome">Larissa Moraes</h4>
               <p class="trip-tripper__bio">Fisioterapeuta com 16 anos de experiência, especialista em Fisiologia do Exercício Avançado e proprietária de duas unidades da Stark Studio Pilates.</p>
             </li>
             <li class="trip-tripper">
-              <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_marcela.jpg" alt="Marcella Contursi" width="216" height="341" loading="lazy">
+              <picture style="display: contents;">
+                <source media="(max-width: 767px)" srcset="./assets/images/palestrante_trip_marcela.webp">
+                <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_marcela.jpg" alt="Marcella Contursi" width="216" height="341" loading="lazy">
+              </picture>
               <h4 class="trip-tripper__nome">Marcella Contursi</h4>
               <p class="trip-tripper__bio">Bailarina clássica, fisioterapeuta, pós-graduada em Pilates e a prescrição do exercício físico. Atua no Método Pilates desde 2011, ministra cursos para profissionais desde 2014 e é proprietária do Studio Pilates Marcella Contursi em Santos/SP.</p>
             </li>
             <li class="trip-tripper">
-              <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_mariana.jpg" alt="Mariana Dias" width="216" height="341" loading="lazy">
+              <picture style="display: contents;">
+                <source media="(max-width: 767px)" srcset="./assets/images/palestrante_trip_mariana.webp">
+                <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_mariana.jpg" alt="Mariana Dias" width="216" height="341" loading="lazy">
+              </picture>
               <h4 class="trip-tripper__nome">Mariana Dias</h4>
               <p class="trip-tripper__bio">Criadora da Metodologia Pilates Construtivo, sócia-proprietária do Instituto VOLL e vencedora do Prêmio Contrology 2023. Fisioterapia pela Universidade Estadual de Londrina – UEL, pós-graduada em Fisioterapia Aplicada em Traumato-Ortopedia e Esportiva.</p>
             </li>
             <li class="trip-tripper">
-              <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_jully.jpg" alt="Jully Felici" width="216" height="341" loading="lazy">
+              <picture style="display: contents;">
+                <source media="(max-width: 767px)" srcset="./assets/images/palestrante_trip_jully.webp">
+                <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_jully.jpg" alt="Jully Felici" width="216" height="341" loading="lazy">
+              </picture>
               <h4 class="trip-tripper__nome">Jully Felici</h4>
               <p class="trip-tripper__bio">Jully Felici é fisioterapeuta, instrutora de Pilates desde 2010, e proprietária da Four Fisio Pilates, fundada em 2020. Jully se tornou uma das grandes referências do Brasil no tema Pilates &amp; Gestão, ensinando sobre equipes, desempenho, produtividade e studios autogerenciáveis.</p>
             </li>
             <li class="trip-tripper">
-              <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_isabele.jpg" alt="Isabele Leonel" width="216" height="341" loading="lazy">
+              <picture style="display: contents;">
+                <source media="(max-width: 767px)" srcset="./assets/images/palestrante_trip_isabele.webp">
+                <img class="trip-tripper__foto" src="./assets/images/palestrante_trip_isabele.jpg" alt="Isabele Leonel" width="216" height="341" loading="lazy">
+              </picture>
               <h4 class="trip-tripper__nome">Isabele Leonel</h4>
               <p class="trip-tripper__bio">É fisioterapeuta, instrutora de Pilates desde 2014, e proprietária da Four Fisio Pilates, fundada em 2020. Isabele se tornou uma das grandes referências do Brasil no tema Pilates &amp; Gestão, ensinando sobre equipes, desempenho, produtividade e studios autogerenciáveis.</p>
             </li>
