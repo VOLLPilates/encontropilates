@@ -27,7 +27,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="assets/css/styles.min.css">
 
     <script type="application/ld+json">
@@ -118,7 +119,7 @@
         <div class="hero-section__row row">
           <img
             class="hero-section__logo"
-            src="assets/images/logo-11-encontro-brasileiro-de-pilates.png"
+            src="assets/images/logo-11-encontro-brasileiro-de-pilates.webp"
             alt="11º Encontro Brasileiro de Pilates"
             width="500"
             height="164"
@@ -126,7 +127,7 @@
 
           <img
             class="hero-section__alert"
-            src="assets/images/atencao_ultimas_50vagas-2.png"
+            src="assets/images/atencao_ultimas_50vagas-2.webp"
             alt="Atenção: últimas 50 vagas"
             width="600"
             height="177"
@@ -193,11 +194,12 @@
 
           <img
             class="lolita-section__image"
-            src="assets/images/lolita_san_miguel_palestrante.png"
+            src="assets/images/lolita_san_miguel_palestrante.webp"
             alt="Lolita San Miguel"
             width="620"
             height="477"
             loading="lazy"
+            decoding="async"
           >
         </div>
       </section>
@@ -397,7 +399,7 @@
             <div class="carousel__viewport">
               <ul class="carousel__track">
                 <li class="carousel__slide">
-                  <img class="carousel__image" src="assets/images/expodompedro01.webp" alt="Plenária montada na Expo Dom Pedro: mais de 4.000 m² de espaço para a conferência" width="732" height="478">
+                  <img class="carousel__image" src="assets/images/expodompedro01.webp" alt="Plenária montada na Expo Dom Pedro: mais de 4.000 m² de espaço para a conferência" width="732" height="478" loading="lazy" decoding="async">
                 </li>
                 <li class="carousel__slide">
                   <img class="carousel__image" src="assets/images/expodompedro02.webp" alt="Vista aérea do complexo: anexo ao segundo maior shopping do Brasil, com 450 lojas" width="732" height="478" loading="lazy">
@@ -637,6 +639,7 @@
             alt="Contagem regressiva: últimas 50 vagas disponíveis"
             width="600"
             height="600"
+            fetchpriority="high"
           >
         </a>
       </div>
@@ -708,6 +711,6 @@
       </div>
     </div>
 
-    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/main.min.js?v=20260806-1" defer></script>
   </body>
 </html>

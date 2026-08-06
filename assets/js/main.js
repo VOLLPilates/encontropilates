@@ -428,7 +428,7 @@
   const ROTATE = 30;
   const DEPTH = 100;
 
-  document.querySelectorAll(".carousel").forEach((carousel) => {
+  const initializeCarousel = (carousel) => {
     const slides = [...carousel.querySelectorAll(".carousel__slide")];
     const prev = carousel.querySelector(".carousel__control--prev");
     const next = carousel.querySelector(".carousel__control--next");
@@ -538,9 +538,38 @@
       render(distance < 0 ? active + 1 : active - 1);
     }, { passive: true });
 
-    window.addEventListener("resize", () => render(active));
+    let resizeFrame = null;
+
+    window.addEventListener("resize", () => {
+      if (resizeFrame !== null) {
+        return;
+      }
+
+      resizeFrame = requestAnimationFrame(() => {
+        resizeFrame = null;
+        render(active);
+      });
+    });
 
     render(0);
+  };
+
+  document.querySelectorAll(".carousel").forEach((carousel) => {
+    if (!("IntersectionObserver" in window)) {
+      initializeCarousel(carousel);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) {
+        return;
+      }
+
+      observer.disconnect();
+      initializeCarousel(carousel);
+    }, { rootMargin: "400px 0px" });
+
+    observer.observe(carousel);
   });
 })();
 
