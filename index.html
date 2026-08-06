@@ -29,7 +29,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <style>
+      :root{--color-purple:#1b123d;--color-white:#fff}*,*::before,*::after{box-sizing:border-box}body{margin:0}img{display:block;max-width:100%;height:auto}button{font:inherit;cursor:pointer}.popup{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72)}.popup[hidden]{display:none}.popup__box{position:relative;width:100%;max-width:450px}.popup__image{width:100%;height:auto}.popup__close{position:absolute;top:-14px;right:-14px;z-index:1;display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;color:var(--color-purple);background:var(--color-white);box-shadow:0 4px 14px rgba(0,0,0,.35);font-size:26px;line-height:1}.popup__close:hover,.popup__close:focus-visible{color:var(--color-white);background:var(--color-purple)}
+    </style>
+    <link rel="preload" href="assets/css/styles.min.css?v=20260806-2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="assets/css/styles.min.css?v=20260806-2">
+      <style>body{overflow:auto!important}#popup-lancamento{display:none!important}</style>
+    </noscript>
 
     <script type="application/ld+json">
       {
@@ -59,7 +66,7 @@
       }
     </script>
   </head>
-  <body>
+  <body style="overflow: hidden;">
     <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
 
     <header id="home" class="site-header">
@@ -628,7 +635,7 @@
       </div>
     </footer>
 
-    <div class="popup" id="popup-lancamento" role="dialog" aria-modal="true" aria-label="Contagem regressiva: últimas 50 vagas disponíveis" hidden>
+    <div class="popup" id="popup-lancamento" role="dialog" aria-modal="true" aria-label="Contagem regressiva: últimas 50 vagas disponíveis">
       <div class="popup__box">
         <button class="popup__close" type="button" aria-label="Fechar aviso">&times;</button>
 
