@@ -24,10 +24,12 @@
 
     <link rel="icon" type="image/png" href="../assets/images/favicon-encontro-pilates.png">
     <link rel="apple-touch-icon" href="../assets/images/favicon-encontro-pilates.png">
+    <link rel="preload" href="../assets/images/exit_popup_contagem_regressiva.webp" as="image" fetchpriority="high">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="../assets/css/styles.min.css">
   </head>
   <body>
@@ -129,8 +131,9 @@
           <div class="video-tour-section__wrapper">
             <iframe
               class="video-tour-section__iframe"
-              src="https://www.youtube.com/embed/87tB_eIGaoM?embeds_referring_euri=https%3A%2F%2Fencontropilates.com.br%2F&amp;embeds_referring_origin=https%3A%2F%2Fencontropilates.com.br"
+              data-src="https://www.youtube.com/embed/87tB_eIGaoM?embeds_referring_euri=https%3A%2F%2Fencontropilates.com.br%2F&amp;embeds_referring_origin=https%3A%2F%2Fencontropilates.com.br"
               title="Tour Expo Dom Pedro - Encontro Brasileiro de Pilates 2026"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
@@ -148,7 +151,7 @@
       </div>
     </footer>
 
-    <div class="popup" id="popup-lancamento" role="dialog" aria-modal="true" aria-label="Contagem regressiva: últimas 50 vagas disponíveis" hidden>
+    <div class="popup" id="popup-lancamento" role="dialog" aria-modal="true" aria-label="Contagem regressiva: últimas 50 vagas disponíveis">
       <div class="popup__box">
         <button class="popup__close" type="button" aria-label="Fechar aviso">&times;</button>
 
@@ -159,6 +162,7 @@
             alt="Contagem regressiva: últimas 50 vagas disponíveis"
             width="600"
             height="600"
+            fetchpriority="high"
           >
         </a>
       </div>
@@ -196,6 +200,30 @@
       </div>
     </div>
 
+    <script>
+      (() => {
+        const iframe = document.querySelector(".video-tour-section__iframe[data-src]");
+        if (!iframe) return;
+
+        const loadVideo = () => {
+          iframe.src = iframe.dataset.src;
+          iframe.removeAttribute("data-src");
+        };
+
+        if (!("IntersectionObserver" in window)) {
+          loadVideo();
+          return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          observer.disconnect();
+          loadVideo();
+        });
+
+        observer.observe(iframe);
+      })();
+    </script>
     <script src="../assets/js/main.min.js" defer></script>
   </body>
 </html>
