@@ -436,6 +436,637 @@
           min-height: 0;
         }
       }
+
+      /* BENEFÍCIOS DE SER UM STAFF VOLL — fundo branco, título verde,
+         grade 2×4 de itens com check verde. */
+      .staff-benefits {
+        padding-block: 60px;
+        background: #ffffff;
+      }
+
+      .staff-benefits__header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .staff-benefits__title {
+        margin: 0;
+        color: #00726B;
+        font-family: "Montserrat", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+      }
+
+      .staff-benefits__intro {
+        margin: 12px 0 0;
+        color: #000000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+
+      .staff-benefits__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 860px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px 40px;
+      }
+
+      .staff-benefit {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: #000000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      .staff-benefit__icon {
+        flex-shrink: 0;
+        width: 25px;
+        height: 25px;
+        margin-top: 2px;
+        object-fit: contain;
+      }
+
+      .staff-benefits__cta {
+        display: block;
+        width: fit-content;
+        margin: 30px auto 0;
+        padding: 14px 32px;
+        background: #ED9403;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        border-radius: 999px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+
+      .staff-benefits__cta:hover,
+      .staff-benefits__cta:focus-visible {
+        transform: scale(1.03);
+        filter: brightness(1.05);
+      }
+
+      @media (min-width: 768px) {
+        .staff-benefits {
+          padding-block: 72px;
+        }
+
+        .staff-benefits__title {
+          font-size: 36px;
+        }
+
+        .staff-benefits__intro {
+          font-size: 19px;
+        }
+
+        .staff-benefits__list {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(4, auto);
+          grid-auto-flow: column;
+        }
+
+        .staff-benefit {
+          font-size: 17px;
+        }
+
+        .staff-benefits__cta {
+          font-size: 21px;
+          padding: 16px 40px;
+        }
+      }
+
+      /* INFORMAÇÕES IMPORTANTES — bg imagem (verde com retângulo roxo à esquerda
+         e mulher à direita), texto todo à esquerda em cima do roxo. */
+      .staff-info {
+        padding-block: 60px;
+        background-color: #007a72;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .staff-info__content {
+        max-width: 620px;
+      }
+
+      .staff-info__title {
+        margin: 0;
+        color: #00CFC6;
+        font-family: "Montserrat", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: 0.02em;
+      }
+
+      .staff-info__intro {
+        margin: 14px 0 22px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      .staff-info__intro strong {
+        font-weight: 700;
+      }
+
+      .staff-info__list {
+        margin: 0;
+        padding: 40px 0 0 22px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.55;
+      }
+
+      .staff-info__list li + li {
+        margin-top: 6px;
+      }
+
+      @media (min-width: 768px) {
+        .staff-info {
+          padding-block: 70px;
+        }
+
+        .staff-info__title {
+          font-size: 32px;
+        }
+
+        .staff-info__intro {
+          font-size: 21px;
+          margin-bottom: 26px;
+        }
+
+        .staff-info__list {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+      }
+
+      /* POR QUE PARTICIPAR? — fundo branco, grid 3×2 de cards com ícone + texto. */
+      .staff-why {
+        padding-block: 60px;
+        background: #ffffff;
+      }
+
+      .staff-why__header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .staff-why__title {
+        margin: 0;
+        color: #00726B;
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+      }
+
+      .staff-why__intro {
+        margin: 14px 0 0;
+        color: #000000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .staff-why__grid {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 940px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px 40px;
+      }
+
+      .staff-why-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .staff-why-card__icon {
+        width: 60px;
+        height: 55px;
+        object-fit: contain;
+      }
+
+      .staff-why-card__text {
+        margin: 0;
+        color: #000000;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+
+      .staff-why__cta {
+        display: block;
+        width: fit-content;
+        margin: 34px auto 0;
+        padding: 14px 32px;
+        background: #ED9403;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        border-radius: 999px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+
+      .staff-why__cta:hover,
+      .staff-why__cta:focus-visible {
+        transform: scale(1.03);
+        filter: brightness(1.05);
+      }
+
+      @media (min-width: 768px) {
+        .staff-why {
+          padding-block: 72px;
+        }
+
+        .staff-why__title {
+          font-size: 36px;
+        }
+
+        .staff-why__intro {
+          font-size: 20px;
+        }
+
+        .staff-why__grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .staff-why-card__text {
+          font-size: 17px;
+        }
+
+        .staff-why__cta {
+          font-size: 21px;
+          padding: 16px 40px;
+        }
+      }
+
+      /* PERGUNTAS FREQUENTES — acordeão verde com risco branco inferior. */
+      .staff-faq {
+        padding-block: 60px;
+        color: #ffffff;
+        background: #00726b;
+      }
+
+      .staff-faq__title {
+        margin: 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .staff-faq__lista {
+        display: grid;
+        gap: 15px;
+        width: min(100%, 730px);
+        margin: 48px auto 0;
+      }
+
+      .staff-faq-item {
+        overflow: hidden;
+        border: 0;
+        border-bottom: 2px solid #ffffff;
+        border-radius: 6px;
+        background: #029791;
+      }
+
+      .staff-faq-item__pergunta {
+        position: relative;
+        padding: 20px 54px 20px 20px;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .staff-faq-item__pergunta::-webkit-details-marker {
+        display: none;
+      }
+
+      .staff-faq-item__pergunta::after {
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        content: "";
+        transform: translateY(-70%) rotate(45deg);
+        transition: transform 340ms ease;
+      }
+
+      .staff-faq-item[open] .staff-faq-item__pergunta::after {
+        transform: translateY(-30%) rotate(225deg);
+      }
+
+      .staff-faq-item__pergunta:focus-visible {
+        outline: 3px solid #ffffff;
+        outline-offset: -5px;
+        border-radius: 5px;
+      }
+
+      .staff-faq-item__resposta {
+        height: 0;
+        overflow: hidden;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.55;
+        opacity: 0;
+      }
+
+      .staff-faq-item.is-open .staff-faq-item__resposta {
+        height: auto;
+        opacity: 1;
+      }
+
+      .staff-faq-item__resposta-inner {
+        padding: 0 20px 20px;
+      }
+
+      .staff-faq-item__resposta p,
+      .staff-faq-item__resposta ul {
+        margin: 0;
+      }
+
+      .staff-faq-item__resposta ul {
+        padding-left: 22px;
+      }
+
+      .staff-faq-item__resposta li + li {
+        margin-top: 4px;
+      }
+
+      @media (min-width: 768px) {
+        .staff-faq__title {
+          font-size: 34px;
+        }
+
+        .staff-faq-item__pergunta {
+          padding: 20px 58px 20px 20px;
+          font-size: 17px;
+        }
+
+        .staff-faq-item__resposta {
+          font-size: 16px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .staff-faq-item__pergunta::after {
+          transition: none;
+        }
+
+        .staff-faq-item.is-open .staff-faq-item__resposta {
+          height: auto;
+        }
+      }
+
+      /* COMO PARTICIPAR — contatos por e-mail e WhatsApp. */
+      .staff-contact {
+        padding-block: 60px;
+        color: #ffffff;
+        background: #764d8f;
+      }
+
+      .staff-contact__content {
+        width: min(100%, 782px);
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .staff-contact__title {
+        margin: 0;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .staff-contact__intro,
+      .staff-contact__instructions {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .staff-contact__intro {
+        margin-top: 10px;
+      }
+
+      .staff-contact__instructions {
+        margin-top: 20px;
+      }
+
+      .staff-contact__intro strong,
+      .staff-contact__instructions strong {
+        font-weight: 700;
+      }
+
+      .staff-contact__buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: min(100%, 700px);
+        margin: 25px auto 0;
+      }
+
+      .staff-contact__button {
+        display: block;
+        border-radius: 18px;
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+
+      .staff-contact__button:hover,
+      .staff-contact__button:focus-visible {
+        transform: translateY(-2px);
+        filter: brightness(1.04);
+      }
+
+      .staff-contact__button-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .staff-contact__note {
+        max-width: 540px;
+        margin: 25px auto 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Montserrat", sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .staff-contact__title {
+          font-size: 32px;
+        }
+
+        .staff-contact__intro,
+        .staff-contact__instructions {
+          font-size: 19px;
+        }
+
+        .staff-contact__buttons {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 21px;
+        }
+
+        .staff-contact__note {
+          font-size: 21px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .staff-contact__button {
+          transition: none;
+        }
+      }
+
+      /* CHAMADA FINAL — convite para fazer parte da experiência. */
+      .staff-final {
+        padding-block: 60px;
+        color: #ffffff;
+        background: #00726b;
+      }
+
+      .staff-final__content {
+        width: min(100%, 760px);
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .staff-final__title {
+        margin: 0;
+        padding-bottom: 10px;
+        color: #00cfc6;
+        font-family: "Montserrat", sans-serif;
+        font-size: 27px;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .staff-final__text,
+      .staff-final__emphasis {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+      }
+
+      .staff-final__text {
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .staff-final__text + .staff-final__text,
+      .staff-final__emphasis {
+        margin-top: 15px;
+      }
+
+      .staff-final__emphasis {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .staff-final__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 404px);
+        min-height: 52px;
+        margin-top: 35px;
+        padding: 10px 22px;
+        border-radius: 21px;
+        color: #ffffff;
+        background: #ed9403;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+
+      .staff-final__cta:hover,
+      .staff-final__cta:focus-visible {
+        transform: scale(1.03);
+        filter: brightness(1.05);
+      }
+
+      @media (min-width: 768px) {
+        .staff-final__title {
+          font-size: 32px;
+        }
+
+        .staff-final__text {
+          font-size: 19px;
+        }
+
+        .staff-final__emphasis,
+        .staff-final__cta {
+          font-size: 21px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .staff-final__cta {
+          transition: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -607,6 +1238,202 @@
           </ul>
         </div>
       </section>
+
+      <section class="staff-benefits" aria-labelledby="staff-benefits-title">
+        <div class="row">
+          <div class="staff-benefits__header">
+            <h2 id="staff-benefits-title" class="staff-benefits__title">BENEFÍCIOS DE SER UM STAFF VOLL</h2>
+            <p class="staff-benefits__intro">Ao participar do Programa de Staff Voluntário, você terá<br> acesso a benefícios exclusivos:</p>
+          </div>
+
+          <ul class="staff-benefits__list">
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Contato direto com palestrantes e especialistas do mercado;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Oportunidade de acompanhar workshops e palestras de perto;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Acesso aos bastidores do evento;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Crachá oficial de Staff;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Coffebreak durante o período de atuação;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Certificação de participação com carga horária;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Welcome Kit exclusivo;</span>
+            </li>
+            <li class="staff-benefit">
+              <img class="staff-benefit__icon" src="./assets/images/icone_check_staff.png" alt="" width="25" height="25" loading="lazy">
+              <span>Uniforme oficial do evento;</span>
+            </li>
+          </ul>
+
+          <a class="staff-benefits__cta" href="https://wa.me/5519986026122?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20patrocinador%21" target="_blank" rel="noopener noreferrer">QUERO SER STAFF</a>
+        </div>
+      </section>
+
+      <section class="staff-info" aria-labelledby="staff-info-title" style="background-image: url('./assets/images/background_staff_informacoes_importantes.webp');">
+        <div class="row">
+          <div class="staff-info__content">
+            <h2 id="staff-info-title" class="staff-info__title">INFORMAÇÕES IMPORTANTES</h2>
+            <p class="staff-info__intro">Antes de se candidatar, <strong>é importante estar<br> ciente</strong> das seguintes informações:</p>
+
+            <ul class="staff-info__list">
+              <li>O Programa de Staff é uma atividade voluntária;</li>
+              <li>A participação não gera vínculo empregatício com o<br> Grupo VOLL;</li>
+              <li>O Grupo VOLL não cobre despesas com passagens,<br> hospedagem, transporte ou deslocamentos;</li>
+              <li>Cada participante é responsável pelos custos<br> relacionados à sua viagem e hospedagem;</li>
+              <li>O treinamento online é obrigatório para todos os<br> selecionados;</li>
+              <li>O cumprimento das escalas estabelecidas é<br> indispensável para a participação no programa.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="staff-why" aria-labelledby="staff-why-title">
+        <div class="row">
+          <div class="staff-why__header">
+            <h2 id="staff-why-title" class="staff-why__title">POR QUE PARTICIPAR?</h2>
+            <p class="staff-why__intro">Participar como Staff Voluntário é uma oportunidade única para:</p>
+          </div>
+
+          <ul class="staff-why__grid">
+            <li class="staff-why-card">
+              <img class="staff-why-card__icon" src="./assets/images/staff_porque_participar_icone01.png" alt="" width="60" height="55" loading="lazy">
+              <p class="staff-why-card__text">Conhecer profissionais e referências do mercado</p>
+            </li>
+            <li class="staff-why-card">
+              <img class="staff-why-card__icon" src="./assets/images/staff_porque_participar_icone02.png" alt="" width="60" height="55" loading="lazy">
+              <p class="staff-why-card__text">Expandir sua<br>rede de contatos</p>
+            </li>
+            <li class="staff-why-card">
+              <img class="staff-why-card__icon" src="./assets/images/staff_porque_participar_icone03.png" alt="" width="60" height="55" loading="lazy">
+              <p class="staff-why-card__text">Desenvolver habilidades de comunicação e trabalho em equipe</p>
+            </li>
+            <li class="staff-why-card">
+              <img class="staff-why-card__icon" src="./assets/images/staff_porque_participar_icone04.png" alt="" width="60" height="55" loading="lazy">
+              <p class="staff-why-card__text">Vivenciar os bastidores de um grande evento</p>
+            </li>
+            <li class="staff-why-card">
+              <img class="staff-why-card__icon" src="./assets/images/staff_porque_participar_icone05.png" alt="" width="60" height="55" loading="lazy">
+              <p class="staff-why-card__text">Aprender com especialistas do Pilates</p>
+            </li>
+            <li class="staff-why-card">
+              <img class="staff-why-card__icon" src="./assets/images/staff_porque_participar_icone06.png" alt="" width="60" height="55" loading="lazy">
+              <p class="staff-why-card__text">Contribuir para o fortalecimento da comunidade do Pilates no Brasil</p>
+            </li>
+          </ul>
+
+          <a class="staff-why__cta" href="https://wa.me/5519986026122?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20patrocinador%21" target="_blank" rel="noopener noreferrer">QUERO SER STAFF</a>
+        </div>
+      </section>
+
+      <section class="staff-faq" aria-labelledby="staff-faq-title">
+        <div class="row">
+          <h2 id="staff-faq-title" class="staff-faq__title">PERGUNTAS FREQUENTES</h2>
+
+          <div class="staff-faq__lista">
+            <details class="staff-faq-item">
+              <summary class="staff-faq-item__pergunta">Quem pode participar?</summary>
+              <div class="staff-faq-item__resposta">
+                <div class="staff-faq-item__resposta-inner">
+                  <ul>
+                    <li>Ter idade mínima de 18 anos;</li>
+                    <li>Ser estudante ou profissional de Fisioterapia;</li>
+                    <li>Ser estudante ou profissional de Educação Física;</li>
+                    <li>Ser estudante ou profissional de Enfermagem;</li>
+                    <li>Ser estudante ou profissional de Marketing;</li>
+                    <li>Ser estudante ou profissional de Publicidade e Propaganda;</li>
+                    <li>Ou ser praticante do Método Pilates;</li>
+                    <li>Ter disponibilidade para cumprir as escalas definidas pela organização;</li>
+                    <li>Participar do treinamento online obrigatório.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <details class="staff-faq-item">
+              <summary class="staff-faq-item__pergunta">Receberei certificado?</summary>
+              <div class="staff-faq-item__resposta">
+                <div class="staff-faq-item__resposta-inner">
+                  <p>Sim, todos os staff voluntários recebem o certificado de participação com carga horária ao fim do evento.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="staff-faq-item">
+              <summary class="staff-faq-item__pergunta">O Grupo VOLL oferece hospedagem?</summary>
+              <div class="staff-faq-item__resposta">
+                <div class="staff-faq-item__resposta-inner">
+                  <p>Não, o Grupo VOLL não cobre despesas com passagens, hospedagem, transporte ou deslocamentos.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="staff-faq-item">
+              <summary class="staff-faq-item__pergunta">O treinamento é presencial?</summary>
+              <div class="staff-faq-item__resposta">
+                <div class="staff-faq-item__resposta-inner">
+                  <p>Não, o treinamento antes do evento é feito de forma online. No dia do evento, antes do mesmo iniciar, temos uma reunião de alinhamento e briefing.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="staff-contact" aria-labelledby="staff-contact-title">
+        <div class="row">
+          <div class="staff-contact__content">
+            <h2 id="staff-contact-title" class="staff-contact__title">Como participar?</h2>
+
+            <p class="staff-contact__intro">Quer fazer parte da equipe de <strong>Staff Voluntário</strong> do <strong>Encontro Brasileiro de Pilates</strong>?</p>
+
+            <p class="staff-contact__instructions"><strong>Entre em contato</strong> com nossa equipe <strong>para receber mais informações</strong> sobre o<br> processo de seleção e disponibilidade de vagas.</p>
+
+            <div class="staff-contact__buttons">
+              <a class="staff-contact__button" href="mailto:eventos1@grupovoll.com.br" aria-label="Entrar em contato por e-mail">
+                <img class="staff-contact__button-image" src="./assets/images/botao_com_icone_emails.png" alt="" width="450" height="141" loading="lazy" decoding="async">
+              </a>
+
+              <a class="staff-contact__button" href="https://wa.me/5519986026122?text=Ol%C3%A1,%20quero%20ser%20STAFF%20do%2011%C2%BA%20Encontro%20Brasileiro%20de%20Pilates!" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato pelo WhatsApp">
+                <img class="staff-contact__button-image" src="./assets/images/botao_com_icone_whatsapp.png" alt="" width="450" height="141" loading="lazy" decoding="async">
+              </a>
+            </div>
+
+            <div class="staff-contact__note">Nossa equipe entrará em contato para orientar você sobre os próximos passos.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="staff-final" aria-labelledby="staff-final-title">
+        <div class="row">
+          <div class="staff-final__content">
+            <h2 id="staff-final-title" class="staff-final__title">VENHA FAZER PARTE DESTA EXPERIÊNCIA</h2>
+
+            <div class="staff-final__text">O Encontro Brasileiro de Pilates é construído por pessoas<br> apaixonadas pelo que fazem.</div>
+
+            <div class="staff-final__text">Se você deseja aprender, colaborar, criar conexões e viver os bastidores de um<br> dos maiores eventos de Pilates do Brasil, queremos você ao nosso lado.</div>
+
+            <div class="staff-final__emphasis">Seja Staff Voluntário VOLL e faça parte desta história.</div>
+
+            <a class="staff-final__cta" href="https://wa.me/5519986026122?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20patrocinador%21" target="_blank" rel="noopener noreferrer">QUERO SER STAFF VOLUNTÁRIO</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -632,5 +1459,71 @@
     </div>
 
     <script src="../assets/js/main.min.js" defer></script>
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        document.querySelectorAll(".staff-faq-item").forEach((item) => {
+          const summary = item.querySelector(".staff-faq-item__pergunta");
+          const answer = item.querySelector(".staff-faq-item__resposta");
+
+          if (!summary || !answer) {
+            return;
+          }
+
+          if (reduceMotion) {
+            item.addEventListener("toggle", () => item.classList.toggle("is-open", item.open));
+            return;
+          }
+
+          let animating = false;
+
+          summary.addEventListener("click", async (event) => {
+            event.preventDefault();
+
+            if (animating) {
+              return;
+            }
+
+            animating = true;
+
+            const opening = !item.open;
+
+            if (opening) {
+              item.open = true;
+            }
+
+            const startHeight = opening ? 0 : answer.getBoundingClientRect().height;
+            const endHeight = opening ? answer.scrollHeight : 0;
+
+            if (opening) {
+              item.classList.add("is-open");
+            }
+
+            const animation = answer.animate(
+              [
+                { height: `${startHeight}px`, opacity: opening ? 0 : 1 },
+                { height: `${endHeight}px`, opacity: opening ? 1 : 0 }
+              ],
+              {
+                duration: 380,
+                easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+                fill: "both"
+              }
+            );
+
+            await animation.finished;
+
+            if (!opening) {
+              item.classList.remove("is-open");
+              item.open = false;
+            }
+
+            animation.cancel();
+            animating = false;
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
