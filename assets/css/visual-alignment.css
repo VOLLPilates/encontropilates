@@ -1,0 +1,330 @@
+/* Ajustes medidos contra o site original em 375px e 1265px. */
+.site-header__row {
+  min-height: 80px;
+}
+
+.site-header__logo {
+  width: 132px;
+}
+
+.hero-section {
+  min-height: calc(100svh - 80px);
+}
+
+.faq-item:first-of-type {
+  border-bottom: 1px solid var(--color-white);
+  background: transparent;
+}
+
+@media (min-width: 1180px) {
+  .site-header__row {
+    min-height: 71px;
+  }
+
+  .site-header__logo {
+    width: 130px;
+  }
+
+  .hero-section {
+    min-height: calc(100svh - 71px);
+  }
+
+  .palestrantes-section .cards-grid--4 {
+    grid-template-columns: repeat(4, 228px);
+    justify-content: center;
+    gap: 15px 19px;
+  }
+
+  .vips-grid {
+    max-width: 960px;
+    gap: 38px 28px;
+    margin-inline: auto;
+  }
+
+  .vips-grid .vip-card {
+    flex: 0 0 136px;
+  }
+
+  .vips-grid .vip-card__photo {
+    max-width: 136px;
+  }
+
+  .video-tour-section__title,
+  .video-tour-section__wrapper {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  .faq-section__row {
+    max-width: 780px;
+  }
+
+  .faq-section__title {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section__title {
+    font-size: 26px;
+  }
+
+  .hero-section__group-logo {
+    display: none;
+  }
+
+  .lolita-section__row {
+    gap: 0;
+  }
+
+  .lolita-section__title {
+    font-size: 30px;
+  }
+
+  .lolita-section__text {
+    margin-top: 14px;
+    font-size: 17px;
+  }
+
+  .lolita-section__image {
+    display: none;
+  }
+
+  .experiencia-section {
+    padding-block: 40px;
+  }
+
+  .experiencia-section__title {
+    font-size: 30px;
+  }
+
+  .experiencia-section .cards-grid {
+    display: none;
+  }
+
+  .local-section,
+  .faq-section {
+    padding-block: 40px;
+  }
+
+  .local-section__title {
+    font-size: 29px;
+  }
+
+  .ingressos-section__title {
+    font-size: 28px;
+  }
+
+  .patrocinadores-section__title {
+    font-size: 25px;
+  }
+
+  .faq-section__title {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    font-size: 24px;
+  }
+
+  .palestrantes-section__title {
+    font-size: 26px;
+  }
+
+  .palestrantes-section .speaker-card {
+    max-width: 180px;
+  }
+
+  .trip-workshop {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .trip-save__row {
+    padding-inline: 20px;
+  }
+
+  .trip-save__title {
+    font-size: 38px;
+  }
+
+  .trip-save__data {
+    font-size: 26px;
+  }
+
+  .trip-save__workshops-titulo,
+  .trip-save__workshops-titulo span,
+  .trip-para-voce__titulo {
+    font-size: 28px;
+  }
+
+  .trip-workshop__icon {
+    align-self: flex-start;
+    width: 80px;
+    height: 80px;
+  }
+
+  .trip-workshop__conteudo {
+    width: 100%;
+    padding: 30px 20px 20px;
+  }
+
+  .trip-workshop__titulo {
+    font-size: 22px;
+  }
+
+  .trip-tripper__foto {
+    max-width: 280px;
+  }
+
+  .trip-tripper__bio {
+    max-width: 280px;
+  }
+
+  .trip-cert {
+    min-height: 214px;
+    margin: 0;
+    padding: 40px 0 0;
+  }
+
+  .trip-cert__title {
+    white-space: normal;
+    font-size: 30px;
+  }
+
+  .trip-mat__title {
+    font-size: 34px;
+  }
+
+  .trip-faq {
+    padding-block: 40px;
+  }
+
+  .trip-faq__title {
+    font-size: 27px;
+  }
+
+  .trip-cert__img {
+    display: none;
+  }
+
+  .staff-hero,
+  .staff-eligibility {
+    min-height: auto;
+    padding-block: 50px;
+  }
+
+  .staff-hero__content,
+  .staff-eligibility__content {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .staff-about {
+    padding-block: 50px;
+  }
+
+  .staff-about__title {
+    font-size: 24px;
+  }
+
+  .staff-about__text {
+    line-height: 1.6;
+  }
+
+  .staff-roles__title {
+    font-size: 30px;
+  }
+
+  .staff-roles__subtitle {
+    font-size: 24px;
+  }
+
+  .staff-roles__intro,
+  .staff-roles__closing {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .staff-role-card,
+  .staff-role-card:nth-child(n + 5) {
+    min-height: 110px;
+    font-size: 15px;
+  }
+
+  .staff-process__title {
+    font-size: 28px;
+  }
+
+  .staff-process__intro {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .staff-process-card {
+    padding: 24px 22px;
+  }
+
+  .staff-process-card__title {
+    font-size: 18px;
+  }
+
+  .staff-process-card__text {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .staff-hero {
+    min-height: 623px;
+  }
+
+  .staff-eligibility {
+    min-height: 505px;
+    padding-block: 40px;
+  }
+
+  .staff-roles {
+    min-height: 699px;
+  }
+
+  .staff-roles__title {
+    font-size: 36px;
+  }
+
+  .staff-roles__subtitle {
+    font-size: 24px;
+  }
+
+  .staff-roles__intro,
+  .staff-roles__closing,
+  .staff-process__intro {
+    font-size: 17px;
+  }
+
+  .staff-role-card {
+    min-height: 90px;
+    font-size: 15px;
+  }
+
+  .staff-process {
+    min-height: 706px;
+  }
+
+  .staff-process__title {
+    font-size: 32px;
+  }
+
+  .staff-process-card__title {
+    font-size: 20px;
+  }
+
+  .staff-process-card__text {
+    font-size: 16px;
+  }
+}
