@@ -16,6 +16,16 @@
   background: transparent;
 }
 
+.site-nav__link--featured {
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.trip-sold-out {
+  cursor: default;
+  pointer-events: none;
+}
+
 @media (min-width: 1180px) {
   .site-header__row {
     min-height: 71px;
@@ -23,6 +33,18 @@
 
   .site-header__logo {
     width: 130px;
+  }
+
+  .site-nav__link--featured {
+    max-width: none;
+    flex-shrink: 0;
+    padding-inline: 16px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .site-nav__list {
+    gap: 14px;
   }
 
   .hero-section {
@@ -247,14 +269,16 @@
 
   .staff-roles__intro,
   .staff-roles__closing {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.5;
   }
 
-  .staff-role-card,
-  .staff-role-card:nth-child(n + 5) {
-    min-height: 110px;
-    font-size: 15px;
+  .staff-role-card {
+    flex-basis: 100%;
+    min-height: 105px;
+    padding: 20px 30px;
+    overflow: hidden;
+    font-size: 18px;
   }
 
   .staff-process__title {
@@ -289,9 +313,6 @@
     padding-block: 40px;
   }
 
-  .staff-roles {
-    min-height: 699px;
-  }
 
   .staff-roles__title {
     font-size: 36px;
@@ -302,14 +323,23 @@
   }
 
   .staff-roles__intro,
-  .staff-roles__closing,
+  .staff-roles__closing {
+    font-size: 19px;
+  }
+
   .staff-process__intro {
     font-size: 17px;
   }
 
   .staff-role-card {
-    min-height: 90px;
-    font-size: 15px;
+    min-height: 105px;
+    padding: 20px 30px;
+    overflow: hidden;
+    font-size: 18px;
+  }
+
+  .staff-roles {
+    min-height: 699px;
   }
 
   .staff-process {

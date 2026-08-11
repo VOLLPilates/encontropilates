@@ -206,7 +206,7 @@
       }
 
       .staff-roles {
-        padding-block: 38px 42px;
+        padding-block: 60px;
         background: #ffffff;
         color: #1f193d;
       }
@@ -221,81 +221,82 @@
         margin: 0;
         color: #00726b;
         font-family: "Montserrat", sans-serif;
-        font-size: 28px;
+        font-size: 36px;
         font-weight: 800;
         line-height: 1.2;
         text-transform: uppercase;
       }
 
       .staff-roles__subtitle {
-        margin: 6px 0 0;
+        margin: 0;
         color: #00726b;
         font-family: "Montserrat", sans-serif;
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 1.25;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
         text-transform: uppercase;
       }
 
       .staff-roles__intro,
       .staff-roles__closing {
         max-width: 620px;
-        margin: 14px auto 0;
-        color: #1f193d;
+        margin: 10px auto 0;
+        color: #000000;
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        font-weight: 400;
+        font-size: 19px;
+        font-weight: 500;
         line-height: 1.4;
         text-align: center;
       }
 
+      .staff-roles__closing {
+        margin-top: 35px;
+      }
+
       .staff-roles__label {
-        margin: 20px 0 0;
-        color: #1f193d;
+        margin: 30px 0 0;
+        color: #000000;
         font-family: "Montserrat", sans-serif;
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 800;
         text-align: center;
       }
 
+      /* Flexbox em vez de grid de 12 colunas: assim a última linha (3 cards)
+         se centraliza sozinha, sem cálculo manual de offset. */
       .staff-roles__grid {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: 20px;
-        max-width: 900px;
-        margin: 24px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1010px;
+        margin: 35px auto 0;
         padding: 0;
         list-style: none;
       }
 
       .staff-role-card {
         display: flex;
-        grid-column: span 3;
+        flex: 0 1 230px;
         align-items: center;
         justify-content: center;
-        min-height: 70px;
-        padding: 12px 16px;
-        border-radius: 14px 0 14px 0;
-        background: #007d75;
+        min-height: 105px;
+        padding: 20px 30px;
+        overflow: hidden;
+        border-radius: 16px 0 16px 0;
+        background: #00726B;
         color: #ffffff;
         font-family: "Montserrat", sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1.35;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
         text-align: center;
       }
 
+      /* Os 3 últimos cards (segunda linha) são mais largos no original: 263px. */
       .staff-role-card:nth-child(n + 5) {
-        grid-column: span 3;
-      }
-
-      .staff-role-card:nth-child(5) {
-        grid-column: 2 / span 3;
-      }
-
-      .staff-roles__closing {
-        max-width: 590px;
-        margin-top: 24px;
+        flex-basis: 263px;
       }
 
       .staff-process {
@@ -415,13 +416,8 @@
           padding-block: 42px 48px;
         }
 
-        .staff-roles__grid {
-          grid-template-columns: 1fr;
-        }
-
-        .staff-role-card,
-        .staff-role-card:nth-child(n + 5) {
-          grid-column: auto;
+        .staff-role-card {
+          flex-basis: 100%;
           min-height: 90px;
         }
 
@@ -1070,7 +1066,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="../assets/css/visual-alignment.css?v=20260806-1">
+    <link rel="stylesheet" href="../assets/css/visual-alignment.css?v=20260810-6">
   </head>
   <body>
     <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
@@ -1109,7 +1105,7 @@
             <li class="site-nav__item"><a class="site-nav__link" href="../programacao/">Programação</a></li>
             <li class="site-nav__item"><a class="site-nav__link" href="./" aria-current="page">Seja Staff</a></li>
             <li class="site-nav__item">
-              <span class="site-nav__link site-nav__link--featured">ÚLTIMOS INGRESSOS DISPONÍVEIS</span>
+              <a class="site-nav__link site-nav__link--featured" href="https://materiais.vollpilates.com.br/encontro-brasileiro-de-pilates-2027-lista-de-espera?_gl=1*1efn9z1*_gcl_au*MTc5MjU5NTUzNS4xNzg0OTAwODE0*_ga*MTE5Njk5ODkxMC4xNzc2MTAzMDc0*_ga_9S2K7N5XCL*czE3ODYzODE4MDAkbzI4JGcxJHQxNzg2MzgyNDkyJGo2MCRsMCRoMA.." target="_blank" rel="noopener noreferrer">VAGAS ESGOTADAS – ENTRE NA LISTA VIP 2027</a>
             </li>
           </ul>
         </nav>
@@ -1209,7 +1205,7 @@
             <li class="staff-role-card">Auxílio à equipe organizadora durante a programação</li>
           </ul>
 
-          <p class="staff-roles__closing">Essa atuação é essencial para garantir uma experiência acolhedora, organizada e eficiente para todos os participantes.</p>
+          <p class="staff-roles__closing">Essa atuação é essencial para garantir uma experiência<br> acolhedora, organizada e eficiente para todos os participantes.</p>
         </div>
       </section>
 
